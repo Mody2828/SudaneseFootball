@@ -214,10 +214,21 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 0.75rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+.red-team .player-card {
+  border-top: 3px solid #e74c3c;
+}
+
+.yellow-team .player-card {
+  border-top: 3px solid #f39c12;
 }
 
 .player-card::before {
@@ -242,18 +253,17 @@ body {
 }
 
 .player-number {
-  display: inline-block;
+  display: flex;
   width: 28px;
   height: 28px;
   background: var(--gradient-primary);
   color: white;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   font-size: 0.8rem;
-  margin-bottom: 0.4rem;
+  flex-shrink: 0;
 }
 
 .red-team .player-number {
@@ -293,6 +303,8 @@ body {
   padding: 1.5rem;
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid #3498db;
+  border-right: 3px solid #3498db;
   transition: all 0.3s ease;
   width: 100%;
 }
@@ -337,6 +349,8 @@ body {
   padding: 0.75rem;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid #e74c3c;
+  border-right: 3px solid #f39c12;
   transition: all 0.3s ease;
 }
 
