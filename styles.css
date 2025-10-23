@@ -62,8 +62,8 @@ body {
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -392,8 +392,8 @@ body {
   }
   
   .logo {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
   
   .teams-section {
@@ -437,8 +437,8 @@ body {
   }
   
   .logo {
-    width: 45px;
-    height: 45px;
+    width: 90px;
+    height: 90px;
   }
   
   .logo-section {
