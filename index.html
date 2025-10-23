@@ -3,47 +3,164 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>لوحة التمرين</title>
+  <title>تشكيلة الفريق - ASV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles_transparent_board.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="stadium">
-    <header class="banner">
-  <div class="crest-wrap">
-    <img src="sudan-ball.png" alt="Sudan Football Crest" class="crest" />
-  </div>
-  <h1>ASV 22/10 9:30pm</h1>
-</header>
+  <div class="app">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo">
+            <img src="sudan-ball.png" alt="Sudan Football" />
+          </div>
+          <div class="match-info">
+            <h1 class="match-title">ASV</h1>
+            <div class="match-details">
+              <span class="date">22/10</span>
+              <span class="time">9:30 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <main class="board">
-      <section class="glass table">
-        <div class="head">
-          <div class="th red">الفريق الأحمر</div>
-          <div class="th yellow">الفريق الأصفر</div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Teams Section -->
+      <section class="teams-section">
+        <!-- Yellow Team (Left) -->
+        <div class="team-card yellow-team">
+          <div class="team-header">
+            <div class="team-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2 class="team-name">الفريق الأصفر</h2>
+          </div>
+          <div class="players-grid">
+            <div class="player-card">
+              <div class="player-number">1</div>
+              <div class="player-name">جوهر</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">2</div>
+              <div class="player-name">سليمان</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">3</div>
+              <div class="player-name">عصام</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">4</div>
+              <div class="player-name">جرافي</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">5</div>
+              <div class="player-name">خالد</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">6</div>
+              <div class="player-name">محمد التجاني</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">7</div>
+              <div class="player-name">فيصل</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">8</div>
+              <div class="player-name">ابوالقاسم</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">9</div>
+              <div class="player-name">رزقه\ احمد</div>
+            </div>
+          </div>
         </div>
 
-        <div class="rows">
-          <ul class="col red">
-            <li>سلمان</li><li>وائل</li><li>حردلو</li><li>ابراهيم</li><li>اواب</li><li>احمد عبدالله</li><li>ابن بطوطة</li><li>عثمان</li><li>رزقه\ احمد</li>
-          </ul>
-          <ul class="col yellow">
-            <li>جوهر</li><li>سليمان</li><li>عصام</li><li>جرافي</li><li>خالد</li><li>محمد التجاني</li><li>فيصل</li><li>ابوالقاسم</li><li>رزقه\ احمد</li>
-          </ul>
+        <!-- Red Team (Right) -->
+        <div class="team-card red-team">
+          <div class="team-header">
+            <div class="team-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2 class="team-name">الفريق الأحمر</h2>
+          </div>
+          <div class="players-grid">
+            <div class="player-card">
+              <div class="player-number">1</div>
+              <div class="player-name">سلمان</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">2</div>
+              <div class="player-name">وائل</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">3</div>
+              <div class="player-name">حردلو</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">4</div>
+              <div class="player-name">ابراهيم</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">5</div>
+              <div class="player-name">اواب</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">6</div>
+              <div class="player-name">احمد عبدالله</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">7</div>
+              <div class="player-name">ابن بطوطة</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">8</div>
+              <div class="player-name">عثمان</div>
+            </div>
+            <div class="player-card">
+              <div class="player-number">9</div>
+              <div class="player-name">رزقه\ احمد</div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="bench">
-          <div class="bench-title">احتياط</div>
-          <div class="bench-box red">حافظ</div>
-          
-          <div class="bench-box yellow"></div>
-        </div>
+      <!-- Bench Section -->
+      <section class="bench-section">
+        <div class="bench-container">
+          <div class="bench-card">
+            <div class="bench-header">
+              <i class="fas fa-users"></i>
+              <h3>احتياط</h3>
+            </div>
+            <div class="bench-players">
+              <div class="bench-player">
+                <span class="bench-number">10</span>
+              </div>
+              <div class="bench-player">
+                <span class="bench-number">10</span>
+                <span class="bench-name">حافظ</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="bench">
-          <div class="bench-title">الفنايل</div>
-          <div class="bench-box red">حردلو</div>
+          <div class="bench-card">
+            <div class="bench-header">
+              <i class="fas fa-tshirt"></i>
+              <h3>الفنايل</h3>
+            </div>
+            <div class="bench-players">
+              <div class="bench-player">
+                <span class="bench-name">حردلو</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
