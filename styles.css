@@ -86,11 +86,20 @@ body {
 .match-title {
   font-size: 2.5rem;
   font-weight: 900;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  animation: subtle-pulse 4s ease-in-out infinite;
   margin-bottom: 0.5rem;
+}
+
+@keyframes subtle-pulse {
+  0% {
+    color: #ff6666;
+  }
+  50% {
+    color: #ff3333;
+  }
+  100% {
+    color: #ff6666;
+  }
 }
 
 .match-details {
