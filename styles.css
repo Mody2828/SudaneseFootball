@@ -11,7 +11,6 @@
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-red: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
   --gradient-yellow: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-  --gradient-blue: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
   --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
@@ -128,7 +127,7 @@ body {
 /* Teams Section */
 .teams-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -164,10 +163,6 @@ body {
   background: var(--gradient-yellow);
 }
 
-.team-card.blue-team::before {
-  background: var(--gradient-blue);
-}
-
 .team-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-strong);
@@ -199,10 +194,6 @@ body {
 
 .yellow-team .team-icon {
   background: var(--gradient-yellow);
-}
-
-.blue-team .team-icon {
-  background: var(--gradient-blue);
 }
 
 .team-name {
@@ -251,10 +242,6 @@ body {
   border-top: 3px solid #f39c12;
 }
 
-.blue-team .player-card {
-  border-top: 3px solid #3498db;
-}
-
 .player-card::before {
   content: '';
   position: absolute;
@@ -296,10 +283,6 @@ body {
 
 .yellow-team .player-number {
   background: var(--gradient-yellow);
-}
-
-.blue-team .player-number {
-  background: var(--gradient-blue);
 }
 
 .player-name {
@@ -407,13 +390,6 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .teams-section {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-}
-
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
