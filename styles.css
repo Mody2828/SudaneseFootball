@@ -891,8 +891,20 @@ body {
   }
 }
 
-/* Previous Matches Responsive */
-@media (max-width: 768px) {
+/* Portrait Phone Orientation - Side by Side */
+@media (max-width: 768px) and (orientation: portrait) {
+  .players-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .players-section {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
   .previous-matches-section {
     padding: 0.5rem;
   }
