@@ -862,6 +862,14 @@ body {
   }
 }
 
+/* Keep teams side-by-side on phones in portrait */
+@media (max-width: 768px) and (orientation: portrait) {
+  .teams-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 480px) {
   .players-grid {
     grid-template-columns: 1fr;
