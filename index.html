@@ -284,7 +284,18 @@
   <!-- Image Lightbox -->
   <div id="imageLightbox" class="image-lightbox" onclick="closeImageLightbox()">
     <span class="lightbox-close" onclick="event.stopPropagation(); closeImageLightbox()">&times;</span>
-    <img id="lightboxImage" src="" alt="Gallery Image" onclick="event.stopPropagation()">
+    <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navigateGallery(-1)" aria-label="Previous">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navigateGallery(1)" aria-label="Next">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="lightbox-image-container" onclick="event.stopPropagation()">
+      <img id="lightboxImage" src="" alt="Gallery Image">
+      <div class="lightbox-counter">
+        <span id="currentImageIndex">1</span> / <span id="totalImages">15</span>
+      </div>
+    </div>
   </div>
 
   <!-- Jerseys Modal -->
@@ -418,16 +429,111 @@
       document.getElementById('galleryModal').style.display = 'none';
     }
 
+    // Gallery images array
+    const galleryImages = [
+      'Gallery/1.jpg', 'Gallery/2.jpg', 'Gallery/3.jpg', 'Gallery/4.jpg',
+      'Gallery/5.jpg', 'Gallery/6.jpg', 'Gallery/7.jpg', 'Gallery/8.jpg',
+      'Gallery/9.jpg', 'Gallery/10.jpg', 'Gallery/11.jpg', 'Gallery/12.jpg',
+      'Gallery/14.jpg', 'Gallery/15.jpg', 'Gallery/16.jpg'
+    ];
+    
+    let currentImageIndex = 0;
+
     // Image Lightbox
     function openImageLightbox(imageSrc) {
+      currentImageIndex = galleryImages.indexOf(imageSrc);
+      if (currentImageIndex === -1) currentImageIndex = 0;
+      
       const lightbox = document.getElementById('imageLightbox');
       const lightboxImage = document.getElementById('lightboxImage');
       lightboxImage.src = imageSrc;
+      updateImageCounter();
       lightbox.style.display = 'flex';
+      
+      // Add keyboard listener
+      document.addEventListener('keydown', handleKeyboardNavigation);
+      
+      // Setup swipe support
+      setTimeout(setupSwipeSupport, 100);
     }
 
     function closeImageLightbox() {
       document.getElementById('imageLightbox').style.display = 'none';
+      document.removeEventListener('keydown', handleKeyboardNavigation);
+    }
+
+    function navigateGallery(direction) {
+      currentImageIndex += direction;
+      
+      if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+      } else if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
+      }
+      
+      const lightboxImage = document.getElementById('lightboxImage');
+      lightboxImage.style.opacity = '0';
+      
+      setTimeout(() => {
+        lightboxImage.src = galleryImages[currentImageIndex];
+        lightboxImage.style.opacity = '1';
+        updateImageCounter();
+      }, 200);
+    }
+
+    function updateImageCounter() {
+      document.getElementById('currentImageIndex').textContent = currentImageIndex + 1;
+      document.getElementById('totalImages').textContent = galleryImages.length;
+    }
+
+    function handleKeyboardNavigation(e) {
+      if (e.key === 'ArrowLeft') {
+        navigateGallery(-1);
+      } else if (e.key === 'ArrowRight') {
+        navigateGallery(1);
+      } else if (e.key === 'Escape') {
+        closeImageLightbox();
+      }
+    }
+
+    // Swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    // Add touch listeners when lightbox opens
+    function setupSwipeSupport() {
+      const lightboxImage = document.getElementById('lightboxImage');
+      if (!lightboxImage) return;
+      
+      lightboxImage.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      lightboxImage.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        handleSwipe();
+      }, { passive: true });
+    }
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diffX = touchStartX - touchEndX;
+      const diffY = touchStartY - touchEndY;
+      
+      // Only trigger if horizontal swipe is greater than vertical swipe
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+        if (diffX > 0) {
+          // Swipe left - next image
+          navigateGallery(1);
+        } else {
+          // Swipe right - previous image
+          navigateGallery(-1);
+        }
+      }
     }
 
     // Jerseys Modal

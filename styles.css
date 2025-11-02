@@ -330,12 +330,30 @@ body {
   animation: fadeIn 0.3s ease;
 }
 
+.lightbox-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .image-lightbox img {
   max-width: 95%;
   max-height: 95%;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s ease;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.image-lightbox img:active {
+  cursor: grabbing;
 }
 
 .lightbox-close {
@@ -360,6 +378,60 @@ body {
 .lightbox-close:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
+}
+
+/* Lightbox Navigation Buttons */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2001;
+}
+
+.lightbox-nav:hover {
+  background: rgba(74, 222, 128, 0.8);
+  border-color: rgba(74, 222, 128, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.lightbox-prev {
+  right: 2rem;
+}
+
+.lightbox-next {
+  left: 2rem;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .match-title {
@@ -1447,6 +1519,26 @@ body {
     font-size: 2rem;
     width: 40px;
     height: 40px;
+  }
+  
+  .lightbox-nav {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .lightbox-prev {
+    right: 1rem;
+  }
+  
+  .lightbox-next {
+    left: 1rem;
+  }
+  
+  .lightbox-counter {
+    bottom: 1rem;
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
   }
   
   .image-lightbox img {
