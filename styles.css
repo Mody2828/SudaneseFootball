@@ -1293,6 +1293,7 @@ body {
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
+    min-height: 70px;
   }
   
   /* Previous-matches header layout */
@@ -1610,6 +1611,7 @@ body {
   .header-content {
     gap: 0.4rem;
     padding-right: 45px;
+    min-height: 60px;
   }
   
   .logo {

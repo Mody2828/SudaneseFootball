@@ -57,6 +57,10 @@
             <i class="fas fa-images"></i>
             <span>الصور</span>
           </li>
+          <li class="menu-item" onclick="openJerseysModal()">
+            <i class="fas fa-tshirt"></i>
+            <span>جدول الفنايل</span>
+          </li>
           </ul>
       </div>
     </div>
@@ -284,7 +288,7 @@
             </div>
           </div>
 
-          <div class="bench-card jerseys-card" onclick="openJerseysModal()">
+          <div class="bench-card jerseys-card">
             <div class="bench-header">
               <i class="fas fa-tshirt"></i>
               <h3>الفنايل</h3>
@@ -398,6 +402,27 @@
               <td>سلمان</td>
               <td><span class="status unmarked">-</span></td>
             </tr>
+            <tr>
+              <td>ابن بطوطه</td>
+              <td><span class="status unmarked">-</span></td>
+            </tr>
+            <tr>
+              <td>سليمان</td>
+              <td><span class="status unmarked">-</span></td>
+            </tr>
+            <tr>
+              <td>هيثم</td>
+              <td><span class="status unmarked">-</span></td>
+            </tr>
+            <tr>
+              <td>ابراهيم مضوي</td>
+              <td><span class="status unmarked">-</span></td>
+            </tr>
+            <tr>
+              <td>ابو القاسم</td>
+              <td><span class="status unmarked">-</span></td>
+            </tr>
+            
           </tbody>
         </table>
       </div>
@@ -558,6 +583,7 @@
 
     // Jerseys Modal
     function openJerseysModal() {
+      closeMenu();
       document.getElementById('jerseysModal').style.display = 'block';
     }
 
