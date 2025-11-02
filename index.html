@@ -433,10 +433,11 @@
     // Menu Functions
     function toggleMenu() {
       const menu = document.getElementById('menuOverlay');
-      if (menu.style.display === 'flex' || menu.style.display === '') {
-        menu.style.display = 'none';
-      } else {
+      const computedStyle = window.getComputedStyle(menu);
+      if (computedStyle.display === 'none') {
         menu.style.display = 'flex';
+      } else {
+        menu.style.display = 'none';
       }
     }
 
