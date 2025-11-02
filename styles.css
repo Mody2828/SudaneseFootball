@@ -1122,11 +1122,39 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+  
   .header-content {
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 0;
+  }
+  
+  .logo-section {
+    flex-direction: row;
+    gap: 0.75rem;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .match-info {
+    flex: 1;
     text-align: center;
-    padding-right: 3.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    letter-spacing: 1px;
   }
   
   .menu-toggle {
@@ -1135,11 +1163,90 @@ body {
     width: 40px;
     height: 40px;
     font-size: 1.1rem;
+    position: absolute;
+  }
+  
+  .main-content {
+    padding: 1rem 0.75rem;
+  }
+  
+  .teams-section {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .teams-section > .match-info {
+    margin-bottom: 0.75rem;
+  }
+  
+  .match-title {
+    font-size: 1.5rem;
+  }
+  
+  .match-details {
+    font-size: 0.85rem;
+  }
+  
+  .teams-grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  
+  .team-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .team-name {
+    font-size: 1.1rem;
+  }
+  
+  .players-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .player-card {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+  
+  .player-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  
+  .player-name {
+    font-size: 0.85rem;
+  }
+  
+  .bench-container {
+    gap: 1rem;
+  }
+  
+  .bench-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .bench-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .bench-player {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
   }
   
   .menu-content {
-    width: 90%;
-    max-width: 350px;
+    width: 85%;
+    max-width: 320px;
   }
   
   .menu-item {
@@ -1154,8 +1261,21 @@ body {
   .modal-content {
     width: 95%;
     max-width: none;
-    margin: 5% auto;
-    max-height: 85vh;
+    margin: 2% auto;
+    max-height: 90vh;
+    border-radius: 12px;
+  }
+  
+  .modal-header {
+    padding: 1rem 1.25rem;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .modal-body {
+    padding: 1rem;
   }
   
   .gallery-modal .modal-content {
@@ -1166,8 +1286,8 @@ body {
   }
   
   .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.5rem;
     padding: 0.5rem;
   }
   
@@ -1178,44 +1298,8 @@ body {
   .announcements-content,
   .rules-content {
     padding: 1rem;
-    font-size: 0.95rem;
-  }
-  
-  .logo-section {
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .teams-grid-wrapper {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .players-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .bench-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .main-content {
-    padding: 1rem;
-  }
-  
-  .match-title {
-    font-size: 2rem;
-  }
-  
-  .page-title {
-    font-size: 3rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 }
 
@@ -1223,49 +1307,128 @@ body {
 @media (max-width: 768px) and (orientation: portrait) {
   .teams-grid-wrapper {
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+  
+  .players-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .players-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .bench-players {
-    flex-direction: column;
-  }
-  
   .header {
-    padding: 1rem;
+    padding: 0.75rem;
   }
   
-  .team-card {
-    padding: 1.5rem;
+  .header-content {
+    gap: 0.5rem;
   }
   
   .logo {
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
   }
   
   .page-title {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
   }
   
   .menu-toggle {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     font-size: 1rem;
+    top: 0.4rem;
+    right: 0.4rem;
+  }
+  
+  .main-content {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .teams-section {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .teams-section > .match-info {
+    margin-bottom: 0.5rem;
+  }
+  
+  .match-title {
+    font-size: 1.3rem;
+  }
+  
+  .match-details {
+    font-size: 0.75rem;
+  }
+  
+  .teams-grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .team-card {
+    padding: 0.75rem;
+    border-radius: 10px;
+  }
+  
+  .team-name {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .players-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+  }
+  
+  .player-card {
+    padding: 0.4rem;
+    border-radius: 6px;
+  }
+  
+  .player-number {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+  
+  .player-name {
+    font-size: 0.75rem;
+  }
+  
+  .bench-container {
+    gap: 0.75rem;
+  }
+  
+  .bench-card {
+    padding: 0.75rem;
+  }
+  
+  .bench-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .bench-player {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  
+  .bench-players {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
   }
   
   .menu-content {
-    width: 85%;
-  }
-  
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 0.5rem;
+    width: 90%;
+    max-width: 300px;
   }
   
   .menu-item {
@@ -1273,16 +1436,50 @@ body {
     font-size: 0.9rem;
   }
   
-  .modal-content {
-    width: 98%;
-    margin: 2% auto;
-    max-height: 90vh;
+  .menu-item i {
+    font-size: 1.1rem;
   }
   
-  .logo-section {
-    flex-direction: row;
-    gap: 0.75rem;
-    align-items: center;
+  .modal-content {
+    width: 98%;
+    margin: 1% auto;
+    max-height: 95vh;
+    border-radius: 10px;
+  }
+  
+  .modal-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .modal-body {
+    padding: 0.75rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.4rem;
+    padding: 0.4rem;
+  }
+  
+  .gallery-body {
+    padding: 0.4rem;
+  }
+  
+  .announcements-content,
+  .rules-content {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  
+  .jerseys-table th,
+  .jerseys-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
   }
 }
 
