@@ -289,6 +289,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.gallery-item img {
+  pointer-events: none;
+}
+
 .gallery-item:hover {
   transform: scale(1.05) translateY(-5px);
   box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
@@ -326,6 +330,54 @@ body {
 }
 
 .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Image Lightbox */
+.image-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.image-lightbox img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 2001;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
 }
 
@@ -1087,6 +1139,18 @@ body {
   left: 2rem;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 101;
+}
+
+/* Previous matches header - preserve original layout */
+.header-content:has(.back-link-section) {
+  justify-content: center;
+  padding-right: 0;
+}
+
+.header-content:has(.back-link-section) .logo-section {
+  flex-direction: row;
+  gap: 1.5rem;
 }
 
 .back-link {
@@ -1153,6 +1217,24 @@ body {
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
+  }
+  
+  /* Preserve previous-matches header layout */
+  .header-content:has(.back-link-section) {
+    justify-content: center;
+    padding-right: 0;
+  }
+  
+  .back-link-section {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 101;
+  }
+  
+  .header-content:has(.back-link-section) .logo-section {
+    flex: 0;
   }
   
   .logo-section {
@@ -1376,6 +1458,23 @@ body {
     padding: 1rem;
     font-size: 0.9rem;
     line-height: 1.6;
+  }
+  
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .image-lightbox img {
+    max-width: 98%;
+    max-height: 85%;
+  }
+  
+  .back-link-section {
+    left: 0.5rem;
   }
 }
 
