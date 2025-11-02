@@ -6,7 +6,7 @@
   <title>الدافوري </title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -19,20 +19,143 @@
           <div class="logo">
             <img src="sudan-ball.png" alt="Sudan Football" />
           </div>
-          <div class="match-info">
-            <h1 class="match-title">Striker</h1>
-            <div class="match-details">
-              <span class="time">Sun 02/11 02:20 PM</span>
+        </div>
+        <div class="match-info">
+          <h1 class="page-title">التمرين   </h1>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay" onclick="closeMenu()">
+      <div class="menu-content" onclick="event.stopPropagation()">
+        <div class="menu-header">
+          <h2>القائمة</h2>
+          <button class="menu-close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="menu-list">
+          <li class="menu-item" onclick="openAnnouncements()">
+            <i class="fas fa-bullhorn"></i>
+            <span>إعلانات</span>
+          </li>
+          <li class="menu-item" onclick="openGroupRules()">
+            <i class="fas fa-clipboard-list"></i>
+            <span>لوائح القروب</span>
+          </li>
+          <li class="menu-item" onclick="openGallery()">
+            <i class="fas fa-images"></i>
+            <span>الصور</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Announcements Modal -->
+    <div id="announcementsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>إعلانات</h2>
+          <span class="close" onclick="closeAnnouncements()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="announcements-content">
+            <p>سيتم إضافة الإعلانات هنا قريباً</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group Rules Modal -->
+    <div id="groupRulesModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>لوائح القروب</h2>
+          <span class="close" onclick="closeGroupRules()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="rules-content">
+            <p>سيتم إضافة لوائح القروب هنا قريباً</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal gallery-modal">
+      <div class="modal-content gallery-modal-content">
+        <div class="modal-header">
+          <h2>الصور</h2>
+          <span class="close" onclick="closeGallery()">&times;</span>
+        </div>
+        <div class="modal-body gallery-body">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="gallery/1.jpg" alt="Gallery Image 1" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/2.jpg" alt="Gallery Image 2" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/3.jpg" alt="Gallery Image 3" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/4.jpg" alt="Gallery Image 4" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/5.jpg" alt="Gallery Image 5" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/6.jpg" alt="Gallery Image 6" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/7.jpg" alt="Gallery Image 7" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/8.jpg" alt="Gallery Image 8" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/9.jpg" alt="Gallery Image 9" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/10.jpg" alt="Gallery Image 10" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/11.jpg" alt="Gallery Image 11" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/12.jpg" alt="Gallery Image 12" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/14.jpg" alt="Gallery Image 14" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/15.jpg" alt="Gallery Image 15" loading="lazy">
+            </div>
+            <div class="gallery-item">
+              <img src="gallery/16.jpg" alt="Gallery Image 16" loading="lazy">
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </div>
 
     <!-- Main Content -->
     <main class="main-content">
       <!-- Teams Section -->
       <section class="teams-section">
+        <div class="match-info">
+          <h1 class="match-title">Striker</h1>
+          <div class="match-details">
+            <span class="time">Sun 02/11 02:20 PM</span>
+          </div>
+        </div>
+        
+        <div class="teams-grid-wrapper">
         <!-- Red Team (Left) -->
         <div class="team-card red-team">
           <div class="team-header">
@@ -64,7 +187,7 @@
             </div>
             <div class="player-card">
               <div class="player-number">6</div>
-              <div class="player-name">رزقه | احمد</div>
+              <div class="player-name"> احمد</div>
             </div>
           </div>
         </div>
@@ -80,7 +203,7 @@
           <div class="players-grid">
             <div class="player-card">
               <div class="player-number">1</div>
-              <div class="player-name">سلمان</div>
+              <div class="player-name"> هيثم</div>
             </div>
             <div class="player-card">
               <div class="player-number">2</div>
@@ -100,9 +223,10 @@
             </div>
             <div class="player-card">
               <div class="player-number">6</div>
-              <div class="player-name">رزقه | احمد</div>
+              <div class="player-name">رزقه </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -241,6 +365,51 @@
   </div>
 
   <script>
+    // Menu Functions
+    function toggleMenu() {
+      const menu = document.getElementById('menuOverlay');
+      if (menu.style.display === 'flex' || menu.style.display === '') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+      }
+    }
+
+    function closeMenu() {
+      document.getElementById('menuOverlay').style.display = 'none';
+    }
+
+    // Announcements Modal
+    function openAnnouncements() {
+      closeMenu();
+      document.getElementById('announcementsModal').style.display = 'block';
+    }
+
+    function closeAnnouncements() {
+      document.getElementById('announcementsModal').style.display = 'none';
+    }
+
+    // Group Rules Modal
+    function openGroupRules() {
+      closeMenu();
+      document.getElementById('groupRulesModal').style.display = 'block';
+    }
+
+    function closeGroupRules() {
+      document.getElementById('groupRulesModal').style.display = 'none';
+    }
+
+    // Gallery Modal
+    function openGallery() {
+      closeMenu();
+      document.getElementById('galleryModal').style.display = 'block';
+    }
+
+    function closeGallery() {
+      document.getElementById('galleryModal').style.display = 'none';
+    }
+
+    // Jerseys Modal
     function openJerseysModal() {
       document.getElementById('jerseysModal').style.display = 'block';
     }
@@ -249,11 +418,24 @@
       document.getElementById('jerseysModal').style.display = 'none';
     }
 
-    // Close modal when clicking outside of it
+    // Close modals when clicking outside of them
     window.onclick = function(event) {
-      const modal = document.getElementById('jerseysModal');
-      if (event.target == modal) {
-        modal.style.display = 'none';
+      const jerseysModal = document.getElementById('jerseysModal');
+      const announcementsModal = document.getElementById('announcementsModal');
+      const groupRulesModal = document.getElementById('groupRulesModal');
+      const galleryModal = document.getElementById('galleryModal');
+      
+      if (event.target == jerseysModal) {
+        jerseysModal.style.display = 'none';
+      }
+      if (event.target == announcementsModal) {
+        announcementsModal.style.display = 'none';
+      }
+      if (event.target == groupRulesModal) {
+        groupRulesModal.style.display = 'none';
+      }
+      if (event.target == galleryModal) {
+        galleryModal.style.display = 'none';
       }
     }
   </script>
