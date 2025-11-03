@@ -458,11 +458,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.header .match-title {
+.header-match-title {
   font-family: 'Abdo Logo', 'Tajawal', 'Cairo', sans-serif;
-  font-size: 8rem;
+  font-size: 3rem;
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #FF8C00;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -472,9 +472,9 @@ body {
 
 .page-title {
   font-family: 'Abdo Logo', 'Tajawal', 'Cairo', sans-serif;
-  font-size: 8rem;
+  font-size: 3rem;
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #FF8C00;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -1353,8 +1353,8 @@ body {
     justify-self: end;
   }
   
-  .header-content:has(.back-link-section) .match-title {
-    font-size: 3rem;
+  .header-match-title {
+    font-size: 1.5rem;
     line-height: 1;
     letter-spacing: 1px;
   }
@@ -1387,25 +1387,19 @@ body {
   }
   
   .header .page-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 0;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1;
   }
   
-  .header .match-title {
-    font-size: 1.5rem;
+  .header-match-title {
+    font-size: 1.2rem;
     line-height: 1;
-    letter-spacing: 1px;
-  }
-  
-  .header-content:has(.back-link-section) .match-title {
-    font-size: 1.5rem;
-    line-height: 1;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
   
   .menu-toggle {
@@ -1658,20 +1652,14 @@ body {
   }
   
   .header .page-title {
-    font-size: 2rem;
-    letter-spacing: 2px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
     line-height: 1;
   }
   
-  .header .match-title {
-    font-size: 2rem;
-    letter-spacing: 2px;
-    line-height: 1;
-  }
-  
-  .header-content:has(.back-link-section) .match-title {
-    font-size: 2rem;
-    letter-spacing: 2px;
+  .header-match-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
     line-height: 1;
   }
   
@@ -1731,20 +1719,14 @@ body {
   }
   
   .header .page-title {
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
     line-height: 1;
   }
   
-  .header .match-title {
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
-    line-height: 1;
-  }
-  
-  .header-content:has(.back-link-section) .match-title {
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
+  .header-match-title {
+    font-size: 1rem;
+    letter-spacing: 0.3px;
     line-height: 1;
   }
   
@@ -1937,20 +1919,14 @@ body {
   }
   
   .header .page-title {
-    font-size: 1.8rem;
-    letter-spacing: 1.5px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
     line-height: 1;
   }
   
-  .header .match-title {
-    font-size: 1.8rem;
-    letter-spacing: 1.5px;
-    line-height: 1;
-  }
-  
-  .header-content:has(.back-link-section) .match-title {
-    font-size: 1.8rem;
-    letter-spacing: 1.5px;
+  .header-match-title {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
     line-height: 1;
   }
   
