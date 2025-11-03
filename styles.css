@@ -1295,6 +1295,7 @@ body {
   
   .header {
     padding: 0.75rem 1rem;
+    padding-left: 0;
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -1307,6 +1308,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding-right: 0;
+    padding-left: 0;
     position: relative;
     max-width: 100%;
     width: 100%;
@@ -1389,6 +1391,8 @@ body {
     grid-column: 1;
     justify-self: start;
     align-self: center;
+    margin-left: 0;
+    padding-left: 0.5rem;
   }
   
   .main-content {
@@ -1611,6 +1615,14 @@ body {
 
 /* Keep teams side-by-side on phones in portrait */
 @media (max-width: 768px) and (orientation: portrait) {
+  .header {
+    padding-left: 0;
+  }
+  
+  .header-content {
+    padding-left: 0;
+  }
+  
   .header .page-title {
     font-size: 2rem;
     letter-spacing: 2px;
@@ -1625,6 +1637,8 @@ body {
     width: 60px;
     height: 60px;
     font-size: 1.8rem;
+    margin-left: 0;
+    padding-left: 0.5rem;
   }
   
   .header-content {
@@ -1645,12 +1659,14 @@ body {
 @media (max-width: 480px) {
   .header {
     padding: 0.75rem;
+    padding-left: 0;
     position: relative;
   }
   
   .header-content {
     gap: 0.4rem;
     padding-right: 45px;
+    padding-left: 0;
     min-height: 60px;
   }
   
@@ -1836,6 +1852,14 @@ body {
 }
 
 @media (max-width: 480px) and (orientation: portrait) {
+  .header {
+    padding-left: 0;
+  }
+  
+  .header-content {
+    padding-left: 0;
+  }
+  
   .header .page-title {
     font-size: 1.8rem;
     letter-spacing: 1.5px;
@@ -1850,6 +1874,8 @@ body {
     width: 55px;
     height: 55px;
     font-size: 1.6rem;
+    margin-left: 0;
+    padding-left: 0.5rem;
   }
   
   .header-content {
