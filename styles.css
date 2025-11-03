@@ -472,7 +472,7 @@ body {
 
 .page-title {
   font-family: 'Abdo Logo', 'Tajawal', 'Cairo', sans-serif;
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 900;
   letter-spacing: 2px;
   color: #FF8C00;
@@ -1387,9 +1387,9 @@ body {
   }
   
   .header .page-title {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     margin-bottom: 0;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1652,8 +1652,8 @@ body {
   }
   
   .header .page-title {
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
+    font-size: 1.6rem;
+    letter-spacing: 0.8px;
     line-height: 1;
   }
   
@@ -1719,8 +1719,8 @@ body {
   }
   
   .header .page-title {
-    font-size: 0.8rem;
-    letter-spacing: 0.2px;
+    font-size: 1.1rem;
+    letter-spacing: 0.4px;
     line-height: 1;
   }
   
@@ -1919,8 +1919,8 @@ body {
   }
   
   .header .page-title {
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+    font-size: 1.4rem;
+    letter-spacing: 0.7px;
     line-height: 1;
   }
   
