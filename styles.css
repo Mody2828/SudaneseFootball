@@ -452,6 +452,13 @@ body {
 }
 
 .match-title {
+  font-size: 2rem;
+  font-weight: 900;
+  animation: subtle-pulse 4s ease-in-out infinite;
+  margin-bottom: 0.5rem;
+}
+
+.header .match-title {
   font-family: 'Abdo Logo', 'Tajawal', 'Cairo', sans-serif;
   font-size: 8rem;
   font-weight: 900;
@@ -460,6 +467,7 @@ body {
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   line-height: 1;
+  animation: none;
 }
 
 .page-title {
@@ -1379,7 +1387,7 @@ body {
   }
   
   .header .page-title {
-    font-size: 3rem;
+    font-size: 1.5rem;
     margin-bottom: 0;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -1389,7 +1397,13 @@ body {
   }
   
   .header .match-title {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+  
+  .header-content:has(.back-link-section) .match-title {
+    font-size: 1.5rem;
     line-height: 1;
     letter-spacing: 1px;
   }
@@ -1644,19 +1658,19 @@ body {
   }
   
   .header .page-title {
-    font-size: 4rem;
+    font-size: 2rem;
     letter-spacing: 2px;
     line-height: 1;
   }
   
   .header .match-title {
-    font-size: 4rem;
+    font-size: 2rem;
     letter-spacing: 2px;
     line-height: 1;
   }
   
   .header-content:has(.back-link-section) .match-title {
-    font-size: 4rem;
+    font-size: 2rem;
     letter-spacing: 2px;
     line-height: 1;
   }
@@ -1717,19 +1731,19 @@ body {
   }
   
   .header .page-title {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
     letter-spacing: 0.5px;
     line-height: 1;
   }
   
   .header .match-title {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
     letter-spacing: 0.5px;
     line-height: 1;
   }
   
   .header-content:has(.back-link-section) .match-title {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
     letter-spacing: 0.5px;
     line-height: 1;
   }
@@ -1923,19 +1937,19 @@ body {
   }
   
   .header .page-title {
-    font-size: 3.5rem;
+    font-size: 1.8rem;
     letter-spacing: 1.5px;
     line-height: 1;
   }
   
   .header .match-title {
-    font-size: 3.5rem;
+    font-size: 1.8rem;
     letter-spacing: 1.5px;
     line-height: 1;
   }
   
   .header-content:has(.back-link-section) .match-title {
-    font-size: 3.5rem;
+    font-size: 1.8rem;
     letter-spacing: 1.5px;
     line-height: 1;
   }
