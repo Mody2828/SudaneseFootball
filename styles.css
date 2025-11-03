@@ -1387,9 +1387,9 @@ body {
   }
   
   .header .page-title {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-bottom: 0;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1397,9 +1397,9 @@ body {
   }
   
   .header-match-title {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     line-height: 1;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
   }
   
   .menu-toggle {
@@ -1652,14 +1652,14 @@ body {
   }
   
   .header .page-title {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     line-height: 1;
   }
   
   .header-match-title {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     line-height: 1;
   }
   
@@ -1719,14 +1719,14 @@ body {
   }
   
   .header .page-title {
-    font-size: 1rem;
-    letter-spacing: 0.3px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
     line-height: 1;
   }
   
   .header-match-title {
-    font-size: 1rem;
-    letter-spacing: 0.3px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
     line-height: 1;
   }
   
@@ -1919,14 +1919,14 @@ body {
   }
   
   .header .page-title {
-    font-size: 1.3rem;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
     line-height: 1;
   }
   
   .header-match-title {
-    font-size: 1.3rem;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
     line-height: 1;
   }
   
