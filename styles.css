@@ -1387,6 +1387,8 @@ body {
     font-size: 1.3rem;
     z-index: 102;
     grid-column: 1;
+    justify-self: start;
+    align-self: center;
   }
   
   .main-content {
@@ -1609,6 +1611,26 @@ body {
 
 /* Keep teams side-by-side on phones in portrait */
 @media (max-width: 768px) and (orientation: portrait) {
+  .header .page-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .menu-toggle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+  
+  .header-content {
+    min-height: 80px;
+  }
+  
   .teams-grid-wrapper {
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
@@ -1646,8 +1668,8 @@ body {
     width: 45px;
     height: 45px;
     font-size: 1.2rem;
-    top: 0.4rem;
-    right: 0.4rem;
+    justify-self: start;
+    align-self: center;
   }
   
   .main-content {
@@ -1810,6 +1832,28 @@ body {
   .jerseys-table td {
     padding: 0.5rem;
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .header .page-title {
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .logo {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .menu-toggle {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+  }
+  
+  .header-content {
+    min-height: 75px;
   }
 }
 
