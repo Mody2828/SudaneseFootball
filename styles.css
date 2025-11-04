@@ -477,14 +477,15 @@ body {
 
 .header-match-title {
   font-family: 'Abdo Logo', 'Tajawal', 'Cairo', sans-serif;
-  font-size: clamp(1rem, 8vw, 6rem);
+  font-size: clamp(0.85rem, 6.5vw, 6rem);
   font-weight: 900;
-  letter-spacing: clamp(0.05rem, 0.6vw, 0.35rem);
+  letter-spacing: clamp(0.04rem, 0.5vw, 0.35rem);
   color: #FF8C00;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   line-height: 1;
   animation: none;
+  white-space: nowrap;
 }
 
 .page-title {
