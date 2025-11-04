@@ -477,9 +477,9 @@ body {
 
 .header-match-title {
   font-family: 'Abdo Logo', 'Tajawal', 'Cairo', sans-serif;
-  font-size: clamp(0.85rem, 6.5vw, 6rem);
+  font-size: 4rem;
   font-weight: 900;
-  letter-spacing: clamp(0.04rem, 0.5vw, 0.35rem);
+  letter-spacing: 0.25rem;
   color: #FF8C00;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -490,9 +490,9 @@ body {
 
 .page-title {
   font-family: 'Abdo Logo', 'Tajawal', 'Cairo', sans-serif;
-  font-size: clamp(2.4rem, 12vw, 7rem);
+  font-size: 4rem;
   font-weight: 900;
-  letter-spacing: clamp(0.12rem, 0.9vw, 0.4rem);
+  letter-spacing: 0.25rem;
   color: #FF8C00;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -1327,11 +1327,12 @@ body {
   
   .header {
     padding: 0.75rem 1rem;
-    padding-left: 0;
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    z-index: 100;
   }
   
   .header-content {
@@ -1352,6 +1353,12 @@ body {
     grid-template-columns: auto 1fr auto;
     padding-right: 0;
     min-height: 70px;
+  }
+  
+  .header-match-info .page-title,
+  .previous-match-info .header-match-title {
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
   }
   
   .back-link-section {
@@ -1705,7 +1712,12 @@ body {
   .header {
     padding: 0.75rem;
     padding-left: 0;
-    position: relative;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
   }
   
   .header-content {
@@ -1724,10 +1736,10 @@ body {
     height: 45px;
   }
   
-  .header-match-info .page-title {
-    font-size: 1.5rem;
-    letter-spacing: 0.6px;
-    line-height: 1;
+  .header-match-info .page-title,
+  .previous-match-info .header-match-title {
+    font-size: 2rem;
+    letter-spacing: 0.15rem;
   }
   
   .menu-toggle {
@@ -1912,6 +1924,9 @@ body {
 @media (max-width: 480px) and (orientation: portrait) {
   .header {
     padding-left: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   
   .header-content {
@@ -1923,29 +1938,10 @@ body {
     min-height: 75px;
   }
   
-  .header-match-info .page-title {
+  .header-match-info .page-title,
+  .previous-match-info .header-match-title {
     font-size: 2.4rem;
-    letter-spacing: 1px;
-    line-height: 1;
-  }
-  
-  .logo {
-    width: 55px;
-    height: 55px;
-  }
-  
-  .menu-toggle {
-    width: 55px;
-    height: 55px;
-    font-size: 1.6rem;
-  }
-  
-  .header-content {
-    min-height: 75px;
-  }
-  
-  .header-content:has(.back-link-section) {
-    min-height: 75px;
+    letter-spacing: 0.18rem;
   }
 }
 
