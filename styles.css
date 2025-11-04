@@ -477,9 +477,9 @@ body {
 
 .header-match-title {
   font-family: 'Abdo Logo', 'Tajawal', 'Cairo', sans-serif;
-  font-size: clamp(1.3rem, 9vw, 6rem);
+  font-size: clamp(1rem, 8vw, 6rem);
   font-weight: 900;
-  letter-spacing: clamp(0.06rem, 0.6vw, 0.35rem);
+  letter-spacing: clamp(0.05rem, 0.6vw, 0.35rem);
   color: #FF8C00;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
