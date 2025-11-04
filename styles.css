@@ -135,6 +135,9 @@ body {
   font-size: 2rem;
   flex-shrink: 0;
   grid-column: 1;
+  justify-self: start;
+  align-self: center;
+  margin-left: 0;
 }
 
 .menu-toggle:hover {
