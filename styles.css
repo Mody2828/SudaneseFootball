@@ -18,6 +18,7 @@
   --text-secondary: #b0b0b0;
   --accent-blue: #3498db;
   --success-green: #2ecc71;
+  --gradient-blue: linear-gradient(135deg, #3498db 0%, #1e90ff 100%);
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-red: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
   --gradient-yellow: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
@@ -582,7 +583,7 @@ body {
 /* Teams grid wrapper */
 .teams-grid-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
@@ -617,6 +618,10 @@ body {
   background: var(--gradient-yellow);
 }
 
+.team-card.blue-team::before {
+  background: var(--gradient-blue);
+}
+
 .team-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-strong);
@@ -648,6 +653,10 @@ body {
 
 .yellow-team .team-icon {
   background: var(--gradient-yellow);
+}
+
+.blue-team .team-icon {
+  background: var(--gradient-blue);
 }
 
 .team-name {
@@ -696,6 +705,10 @@ body {
   border-top: 3px solid #f39c12;
 }
 
+.blue-team .player-card {
+  border-top: 3px solid #3498db;
+}
+
 .player-card::before {
   content: '';
   position: absolute;
@@ -737,6 +750,10 @@ body {
 
 .yellow-team .player-number {
   background: var(--gradient-yellow);
+}
+
+.blue-team .player-number {
+  background: var(--gradient-blue);
 }
 
 .player-name {
@@ -1482,7 +1499,7 @@ body {
   
   .teams-grid-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 0.75rem;
     width: 100%;
   }
@@ -1698,7 +1715,7 @@ body {
   }
   
   .teams-grid-wrapper {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 0.75rem;
   }
   
@@ -1790,7 +1807,7 @@ body {
   }
   
   .teams-grid-wrapper {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 0.5rem;
     width: 100%;
   }
