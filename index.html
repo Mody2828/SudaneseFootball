@@ -502,16 +502,29 @@
     ];
     
     let currentImageIndex = 0;
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+
+    function showLightboxImage(index) {
+      const nextSrc = galleryImages[index];
+      lightboxImage.style.opacity = '0';
+      lightboxImage.src = '';
+      
+      const loader = new Image();
+      loader.onload = () => {
+        lightboxImage.src = nextSrc;
+        lightboxImage.style.opacity = '1';
+        updateImageCounter();
+      };
+      loader.src = nextSrc;
+    }
 
     // Image Lightbox
     function openImageLightbox(imageSrc) {
       currentImageIndex = galleryImages.indexOf(imageSrc);
       if (currentImageIndex === -1) currentImageIndex = 0;
-      
-      const lightbox = document.getElementById('imageLightbox');
-      const lightboxImage = document.getElementById('lightboxImage');
-      lightboxImage.src = imageSrc;
-      updateImageCounter();
+
+      showLightboxImage(currentImageIndex);
       lightbox.style.display = 'flex';
       
       // Add keyboard listener
@@ -534,15 +547,8 @@
       } else if (currentImageIndex >= galleryImages.length) {
         currentImageIndex = 0;
       }
-      
-      const lightboxImage = document.getElementById('lightboxImage');
-      lightboxImage.style.opacity = '0';
-      
-      setTimeout(() => {
-        lightboxImage.src = galleryImages[currentImageIndex];
-        lightboxImage.style.opacity = '1';
-        updateImageCounter();
-      }, 200);
+
+      showLightboxImage(currentImageIndex);
     }
 
     function updateImageCounter() {
@@ -568,7 +574,6 @@
 
     // Add touch listeners when lightbox opens
     function setupSwipeSupport() {
-      const lightboxImage = document.getElementById('lightboxImage');
       if (!lightboxImage) return;
       
       lightboxImage.addEventListener('touchstart', function(e) {
