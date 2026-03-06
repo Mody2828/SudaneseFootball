@@ -998,6 +998,98 @@ body.body-locked {
   white-space: nowrap;
 }
 
+/* ── Formation badge (used in team header) ───────────────────── */
+.tv-formation {
+  font-size: 0.68rem; font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-sub);
+  letter-spacing: 0.04em;
+  direction: ltr;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── TV-Style Player List ────────────────────────────────────── */
+.tv-lineup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 0.5rem;
+}
+
+@keyframes tv-slide-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.tv-player-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px 9px 14px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  animation: tv-slide-in 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: calc(var(--ti, 0) * 55ms + 80ms);
+  position: relative; overflow: hidden;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.tv-player-card::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 15%; height: 70%;
+  width: 3px; border-radius: 2px;
+}
+.yellow-team .tv-player-card::after { background: var(--amber); }
+.red-team    .tv-player-card::after { background: var(--red); }
+
+.tv-player-card:hover {
+  background: var(--surface-2);
+  border-color: var(--border-bright);
+}
+
+.tv-num {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.88rem; font-weight: 800;
+  flex-shrink: 0; line-height: 1;
+}
+.yellow-team .tv-num {
+  background: linear-gradient(145deg, #ffd700, #e8a000);
+  color: #1a0a00;
+  box-shadow: 0 2px 8px rgba(255,184,0,0.4);
+}
+.red-team .tv-num {
+  background: linear-gradient(145deg, #ff4060, #c0001a);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(255,45,85,0.4);
+}
+
+.tv-name {
+  flex: 1;
+  font-size: 0.92rem; font-weight: 700; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.tv-pos {
+  font-size: 0.6rem; font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 1px 7px;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+.tv-pos.pos-gk  { background: rgba(162, 89,255,0.18); color: #a259ff; }
+.tv-pos.pos-def { background: rgba( 14,165,233,0.18); color: #0ea5e9; }
+.tv-pos.pos-mid { background: rgba(  0,232,122,0.18); color: var(--green); }
+.tv-pos.pos-fwd { background: rgba(255,184,  0,0.18); color: var(--amber); }
+
 /* ── Bench Section ───────────────────────────────────────────── */
 .bench-section { margin-top: 1.5rem; }
 
@@ -1554,9 +1646,16 @@ body.body-locked {
   .match-title    { font-size: clamp(1rem, 5vw, 1.4rem); }
 
   /* Teams — always stacked on phones */
-  .teams-grid-wrapper,
-  .teams-grid-wrapper.two-columns { grid-template-columns: 1fr; }
-  .team-card      { padding: 1.1rem; border-radius: var(--radius-md); }
+  .teams-grid-wrapper.two-columns { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .team-card      { padding: 0.75rem; border-radius: var(--radius-md); }
+  .team-header    { gap: 0.5rem; margin-bottom: 0.9rem; padding-bottom: 0.7rem; }
+  .team-icon      { width: 34px; height: 34px; font-size: 0.85rem; }
+  .team-card .team-name { font-size: 1.1rem; }
+  .tv-formation   { font-size: 0.6rem; padding: 2px 6px; }
+  .tv-lineup      { gap: 4px; }
+  .tv-player-card { padding: 7px 8px; gap: 7px; }
+  .tv-num         { width: 28px; height: 28px; font-size: 0.72rem; }
+  .tv-name        { font-size: 0.78rem; }
   .bench-container{ max-width: 100%; }
 
   /* Previous matches */
@@ -1622,7 +1721,7 @@ body.body-locked {
   .bench-card:hover,
   .menu-toggle:hover  { transform: none; box-shadow: none; }
 
-  .team-card:active   { transform: scale(0.99); }
+  .team-card:active  { transform: scale(0.99); }
   .masonry-item:active { transform: scale(0.97); }
   .lb-thumb:active    { opacity: 1; transform: scale(1.06); }
   .menu-item:active   { background: var(--green-dim); }
