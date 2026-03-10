@@ -61,6 +61,12 @@
             <i class="fas fa-tshirt"></i>
             <span>جدول الفنايل</span>
           </li>
+          <li class="menu-item">
+            <a href="reports.html" style="display: flex; align-items: center; gap: 1rem; color: inherit; text-decoration: none; width: 100%;">
+              <i class="fas fa-newspaper"></i>
+              <span>التقارير</span>
+            </a>
+          </li>
           </ul>
       </div>
     </div>
@@ -119,58 +125,104 @@
     </div>
 
     <!-- Gallery Modal -->
-    <div id="galleryModal" class="modal gallery-modal">
-      <div class="modal-content gallery-modal-content">
-        <div class="modal-header">
-          <h2>الصور</h2>
-          <span class="close" onclick="closeGallery()">&times;</span>
+    <div id="galleryModal" class="gallery-modal-overlay">
+      <div class="gallery-panel">
+        <div class="gallery-header">
+          <div class="gallery-header-info">
+            <div class="gallery-header-icon"><i class="fas fa-camera"></i></div>
+            <span class="gallery-header-title">الصور</span>
+            <span class="gallery-photo-count">١٧ صورة</span>
+          </div>
+          <button class="gallery-close-btn" onclick="closeGallery()">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
-        <div class="modal-body gallery-body">
-          <div class="gallery-grid">
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/1.jpg')">
-              <img src="Gallery/1.jpg" alt="Gallery Image 1" loading="lazy">
+        <div class="gallery-scroll-body">
+          <div class="masonry-gallery">
+            <div class="masonry-item" style="--i:0" onclick="openImageLightbox('Gallery/1.jpg')">
+              <img src="Gallery/1.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">1</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/2.jpg')">
-              <img src="Gallery/2.jpg" alt="Gallery Image 2" loading="lazy">
+            <div class="masonry-item" style="--i:1" onclick="openImageLightbox('Gallery/2.jpg')">
+              <img src="Gallery/2.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">2</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/3.jpg')">
-              <img src="Gallery/3.jpg" alt="Gallery Image 3" loading="lazy">
+            <div class="masonry-item" style="--i:2" onclick="openImageLightbox('Gallery/3.jpg')">
+              <img src="Gallery/3.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">3</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/4.jpg')">
-              <img src="Gallery/4.jpg" alt="Gallery Image 4" loading="lazy">
+            <div class="masonry-item" style="--i:3" onclick="openImageLightbox('Gallery/4.jpg')">
+              <img src="Gallery/4.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">4</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/5.jpg')">
-              <img src="Gallery/5.jpg" alt="Gallery Image 5" loading="lazy">
+            <div class="masonry-item" style="--i:4" onclick="openImageLightbox('Gallery/5.jpg')">
+              <img src="Gallery/5.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">5</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/6.jpg')">
-              <img src="Gallery/6.jpg" alt="Gallery Image 6" loading="lazy">
+            <div class="masonry-item" style="--i:5" onclick="openImageLightbox('Gallery/6.jpg')">
+              <img src="Gallery/6.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">6</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/7.jpg')">
-              <img src="Gallery/7.jpg" alt="Gallery Image 7" loading="lazy">
+            <div class="masonry-item" style="--i:6" onclick="openImageLightbox('Gallery/7.jpg')">
+              <img src="Gallery/7.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">7</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/8.jpg')">
-              <img src="Gallery/8.jpg" alt="Gallery Image 8" loading="lazy">
+            <div class="masonry-item" style="--i:7" onclick="openImageLightbox('Gallery/8.jpg')">
+              <img src="Gallery/8.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">8</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/9.jpg')">
-              <img src="Gallery/9.jpg" alt="Gallery Image 9" loading="lazy">
+            <div class="masonry-item" style="--i:8" onclick="openImageLightbox('Gallery/9.jpg')">
+              <img src="Gallery/9.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">9</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/10.jpg')">
-              <img src="Gallery/10.jpg" alt="Gallery Image 10" loading="lazy">
+            <div class="masonry-item" style="--i:9" onclick="openImageLightbox('Gallery/10.jpg')">
+              <img src="Gallery/10.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">10</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/11.jpg')">
-              <img src="Gallery/11.jpg" alt="Gallery Image 11" loading="lazy">
+            <div class="masonry-item" style="--i:10" onclick="openImageLightbox('Gallery/11.jpg')">
+              <img src="Gallery/11.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">11</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/12.jpg')">
-              <img src="Gallery/12.jpg" alt="Gallery Image 12" loading="lazy">
+            <div class="masonry-item" style="--i:11" onclick="openImageLightbox('Gallery/12.jpg')">
+              <img src="Gallery/12.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">12</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/14.jpg')">
-              <img src="Gallery/14.jpg" alt="Gallery Image 14" loading="lazy">
+            <div class="masonry-item" style="--i:12" onclick="openImageLightbox('Gallery/14.jpg')">
+              <img src="Gallery/14.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">13</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/15.jpg')">
-              <img src="Gallery/15.jpg" alt="Gallery Image 15" loading="lazy">
+            <div class="masonry-item" style="--i:13" onclick="openImageLightbox('Gallery/15.jpg')">
+              <img src="Gallery/15.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">14</span>
             </div>
-            <div class="gallery-item" onclick="openImageLightbox('Gallery/16.jpg')">
-              <img src="Gallery/16.jpg" alt="Gallery Image 16" loading="lazy">
+            <div class="masonry-item" style="--i:14" onclick="openImageLightbox('Gallery/16.jpg')">
+              <img src="Gallery/16.jpg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">15</span>
+            </div>
+            <div class="masonry-item" style="--i:15" onclick="openImageLightbox('Gallery/17.jpeg')">
+              <img src="Gallery/17.jpeg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">16</span>
+            </div>
+            <div class="masonry-item" style="--i:16" onclick="openImageLightbox('Gallery/18.jpeg')">
+              <img src="Gallery/18.jpeg" alt="" loading="lazy">
+              <div class="masonry-hover"><div class="masonry-hover-icon"><i class="fas fa-expand-alt"></i></div></div>
+              <span class="masonry-badge">17</span>
             </div>
           </div>
         </div>
@@ -182,7 +234,7 @@
       <!-- Teams Section -->
       <section class="teams-section">
         <div class="match-info">
-          <h1 class="match-title">تمرين الأربعاء 04/03</h1>
+          <h1 class="match-title">تمرين الاثنين 09/03</h1>
           <div class="match-details">
             <span class="time">ASV 09:30 PM</span>
           </div>
@@ -196,44 +248,18 @@
                 <i class="fas fa-shield-alt"></i>
               </div>
               <h2 class="team-name">الفريق الأصفر</h2>
+              <span class="tv-formation">١-٢-٣-٣</span>
             </div>
-            <div class="players-grid two-columns">
-              <div class="player-card">
-                <div class="player-number">1</div>
-                <div class="player-name">عصام</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">2</div>
-                <div class="player-name">فيصل</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">3</div>
-                <div class="player-name">سلمان</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">4</div>
-                <div class="player-name">وائل</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">5</div>
-                <div class="player-name">الرشيد</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">6</div>
-                <div class="player-name">بطوطه</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">7</div>
-                <div class="player-name">عمر</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">8</div>
-                <div class="player-name">سموال</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">9</div>
-                <div class="player-name">رزقه | انور</div>
-              </div>
+            <div class="tv-lineup">
+              <div class="tv-player-card" style="--ti:0"><div class="tv-num player-number">1</div><span class="tv-name player-name">رزقه / انور</span></div>
+              <div class="tv-player-card" style="--ti:1"><div class="tv-num player-number">2</div><span class="tv-name player-name">جوهر</span></div>
+              <div class="tv-player-card" style="--ti:2"><div class="tv-num player-number">3</div><span class="tv-name player-name">جرافي</span></div>
+              <div class="tv-player-card" style="--ti:3"><div class="tv-num player-number">4</div><span class="tv-name player-name">عصام</span></div>
+              <div class="tv-player-card" style="--ti:4"><div class="tv-num player-number">5</div><span class="tv-name player-name">الرشيد</span></div>
+              <div class="tv-player-card" style="--ti:5"><div class="tv-num player-number">6</div><span class="tv-name player-name">محى الدين</span></div>
+              <div class="tv-player-card" style="--ti:6"><div class="tv-num player-number">7</div><span class="tv-name player-name">عثمان</span></div>
+              <div class="tv-player-card" style="--ti:7"><div class="tv-num player-number">8</div><span class="tv-name player-name">سندا</span></div>
+              <div class="tv-player-card" style="--ti:8"><div class="tv-num player-number">9</div><span class="tv-name player-name">ابن بطوطه</span></div>
             </div>
         </div>
 
@@ -244,48 +270,147 @@
                 <i class="fas fa-shield-alt"></i>
               </div>
               <h2 class="team-name">الفريق الأحمر</h2>
+              <span class="tv-formation">١-٢-٣-٣</span>
             </div>
-            <div class="players-grid two-columns">
-              <div class="player-card">
-                <div class="player-number">1</div>
-                <div class="player-name">جوهر</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">2</div>
-                <div class="player-name">محي الدين</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">3</div>
-                <div class="player-name">محمود</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">4</div>
-                <div class="player-name">سندا</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">5</div>
-                <div class="player-name">ابوالقاسم</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">6</div>
-                <div class="player-name">عثمان</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">7</div>
-                <div class="player-name">جرافي</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">8</div>
-                <div class="player-name">وادفور</div>
-              </div>
-              <div class="player-card">
-                <div class="player-number">9</div>
-                <div class="player-name">رزقه | انور</div>
-              </div>
+            <div class="tv-lineup">
+              <div class="tv-player-card" style="--ti:0"><div class="tv-num player-number">1</div><span class="tv-name player-name">رزقه / انور</span></div>
+              <div class="tv-player-card" style="--ti:1"><div class="tv-num player-number">2</div><span class="tv-name player-name">سليمان</span></div>
+              <div class="tv-player-card" style="--ti:2"><div class="tv-num player-number">3</div><span class="tv-name player-name">جاك</span></div>
+              <div class="tv-player-card" style="--ti:3"><div class="tv-num player-number">4</div><span class="tv-name player-name">خالد</span></div>
+              <div class="tv-player-card" style="--ti:4"><div class="tv-num player-number">5</div><span class="tv-name player-name">عمر</span></div>
+              <div class="tv-player-card" style="--ti:5"><div class="tv-num player-number">6</div><span class="tv-name player-name">محمود</span></div>
+              <div class="tv-player-card" style="--ti:6"><div class="tv-num player-number">7</div><span class="tv-name player-name">ابو القاسم</span></div>
+              <div class="tv-player-card" style="--ti:7"><div class="tv-num player-number">8</div><span class="tv-name player-name">وائل</span></div>
+              <div class="tv-player-card" style="--ti:8"><div class="tv-num player-number">9</div><span class="tv-name player-name">جمعه</span></div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- ═══ Lineup Pitch Section ═══ -->
+      <section class="lineup-section">
+
+        <!-- Header -->
+        <div class="lineup-header">
+          <div class="lineup-header-left">
+            <i class="fas fa-futbol lineup-icon"></i>
+            <span class="lineup-title">التشكيلة</span>
+          </div>
+          <div class="lineup-header-right">
+            <span class="lineup-date">الاثنين 09/03</span>
+            <span class="lineup-time"><i class="fas fa-clock"></i> ASV 09:30 PM</span>
+          </div>
+        </div>
+
+        <!-- Teams bar -->
+        <div class="lineup-teams-bar">
+          <div class="lineup-team-name lineup-yellow">
+            <i class="fas fa-shield-alt"></i>
+            <span>الأصفر</span>
+          </div>
+          <div class="lineup-formation-badge">١ - ٢ - ٣ - ٣</div>
+          <div class="lineup-team-name lineup-red">
+            <span>الأحمر</span>
+            <i class="fas fa-shield-alt"></i>
+          </div>
+        </div>
+
+        <!-- Pitch -->
+        <div class="lineup-pitch-wrap">
+          <div class="football-pitch" id="footballPitch">
+
+            <!-- ── Pitch Markings ── -->
+            <div class="fp-center-line"></div>
+            <div class="fp-center-circle"></div>
+            <div class="fp-center-dot"></div>
+            <!-- Top half -->
+            <div class="fp-pen-box fp-pen-top"></div>
+            <div class="fp-goal-box fp-goal-top"></div>
+            <div class="fp-penalty-spot fp-spot-top"></div>
+            <!-- Bottom half -->
+            <div class="fp-pen-box fp-pen-bot"></div>
+            <div class="fp-goal-box fp-goal-bot"></div>
+            <div class="fp-penalty-spot fp-spot-bot"></div>
+            <!-- Corner arcs -->
+            <div class="fp-corner fp-c-tl"></div>
+            <div class="fp-corner fp-c-tr"></div>
+            <div class="fp-corner fp-c-bl"></div>
+            <div class="fp-corner fp-c-br"></div>
+            <!-- Goals -->
+            <div class="fp-goal fp-goal-area-top"></div>
+            <div class="fp-goal fp-goal-area-bot"></div>
+
+            <!-- ── Yellow Team (top half, GK at top) ── -->
+            <!-- GK -->
+            <div class="pp yp" style="left:50%;top:5.5%;--p:0">
+              <div class="pp-dot">١</div><span class="pp-name">عصام</span>
+            </div>
+            <!-- DEF -->
+            <div class="pp yp" style="left:30%;top:19%;--p:1">
+              <div class="pp-dot">٢</div><span class="pp-name">فيصل</span>
+            </div>
+            <div class="pp yp" style="left:70%;top:19%;--p:2">
+              <div class="pp-dot">٣</div><span class="pp-name">سلمان</span>
+            </div>
+            <!-- MID -->
+            <div class="pp yp" style="left:14%;top:32%;--p:3">
+              <div class="pp-dot">٤</div><span class="pp-name">وائل</span>
+            </div>
+            <div class="pp yp" style="left:50%;top:30%;--p:4">
+              <div class="pp-dot">٥</div><span class="pp-name">الرشيد</span>
+            </div>
+            <div class="pp yp" style="left:86%;top:32%;--p:5">
+              <div class="pp-dot">٦</div><span class="pp-name">بطوطه</span>
+            </div>
+            <!-- FWD -->
+            <div class="pp yp" style="left:25%;top:42%;--p:6">
+              <div class="pp-dot">٧</div><span class="pp-name">عمر</span>
+            </div>
+            <div class="pp yp" style="left:50%;top:43.5%;--p:7">
+              <div class="pp-dot">٨</div><span class="pp-name">سموال</span>
+            </div>
+            <div class="pp yp" style="left:75%;top:42%;--p:8">
+              <div class="pp-dot">٩</div><span class="pp-name">رزقه</span>
+            </div>
+
+            <!-- ── Red Team (bottom half, GK at bottom) ── -->
+            <!-- GK -->
+            <div class="pp rp" style="left:50%;top:94.5%;--p:9">
+              <div class="pp-dot">١</div><span class="pp-name">جوهر</span>
+            </div>
+            <!-- DEF -->
+            <div class="pp rp" style="left:30%;top:81%;--p:10">
+              <div class="pp-dot">٢</div><span class="pp-name">محي الدين</span>
+            </div>
+            <div class="pp rp" style="left:70%;top:81%;--p:11">
+              <div class="pp-dot">٣</div><span class="pp-name">محمود</span>
+            </div>
+            <!-- MID -->
+            <div class="pp rp" style="left:14%;top:68%;--p:12">
+              <div class="pp-dot">٤</div><span class="pp-name">سندا</span>
+            </div>
+            <div class="pp rp" style="left:50%;top:70%;--p:13">
+              <div class="pp-dot">٥</div><span class="pp-name">ابوالقاسم</span>
+            </div>
+            <div class="pp rp" style="left:86%;top:68%;--p:14">
+              <div class="pp-dot">٦</div><span class="pp-name">عثمان</span>
+            </div>
+            <!-- FWD -->
+            <div class="pp rp" style="left:25%;top:57.5%;--p:15">
+              <div class="pp-dot">٧</div><span class="pp-name">جرافي</span>
+            </div>
+            <div class="pp rp" style="left:50%;top:56%;--p:16">
+              <div class="pp-dot">٨</div><span class="pp-name">وادفور</span>
+            </div>
+            <div class="pp rp" style="left:75%;top:57.5%;--p:17">
+              <div class="pp-dot">٩</div><span class="pp-name">انور</span>
+            </div>
+
+          </div><!-- /football-pitch -->
+        </div><!-- /pitch-wrap -->
+
+      </section>
+      <!-- ═══ End Lineup Pitch ═══ -->
 
       <!-- Bench Section -->
       <section class="bench-section">
@@ -297,7 +422,16 @@
             </div>
             <div class="bench-players">
               <div class="bench-player">
-                <span class="bench-name">جمعه</span>
+                <span class="bench-name">سليمان</span>
+              </div>
+              <div class="bench-player">
+                <span class="bench-name">فيصل</span>
+              </div>
+              <div class="bench-player">
+                <span class="bench-name">عباده</span>
+              </div>
+              <div class="bench-player">
+                <span class="bench-name">هاني</span>
               </div>
             </div>
           </div>
@@ -309,7 +443,7 @@
             </div>
             <div class="bench-players">
               <div class="bench-player">
-                <span class="bench-name">فيصل</span>
+                <span class="bench-name">جمعه</span>
               </div>
             </div>
           </div>
@@ -320,20 +454,36 @@
   </div>
 
   <!-- Image Lightbox -->
-  <div id="imageLightbox" class="image-lightbox" onclick="closeImageLightbox()">
-    <span class="lightbox-close" onclick="event.stopPropagation(); closeImageLightbox()">&times;</span>
-    <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navigateGallery(-1)" aria-label="Previous">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-    <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navigateGallery(1)" aria-label="Next">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <div class="lightbox-image-container" onclick="event.stopPropagation()">
-      <img id="lightboxImage" src="" alt="Gallery Image">
-      <div class="lightbox-counter">
-        <span id="currentImageIndex">1</span> / <span id="totalImages">15</span>
+  <div id="imageLightbox" class="lb-overlay">
+    <!-- Top bar -->
+    <div class="lb-topbar" onclick="event.stopPropagation()">
+      <div class="lb-counter">
+        <i class="fas fa-images"></i>
+        <span id="lb-current">1</span>
+        <span class="lb-slash">/</span>
+        <span id="lb-total">15</span>
       </div>
+      <button class="lb-close" onclick="closeImageLightbox()" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
+
+    <!-- Main stage: click backdrop to close, click image to zoom -->
+    <div class="lb-stage" id="lb-stage" onclick="closeImageLightbox()">
+      <button class="lb-arrow lb-prev" onclick="event.stopPropagation(); navigateGallery(-1)" aria-label="Previous">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="lb-imgbox" onclick="event.stopPropagation(); toggleZoom(event)">
+        <div class="lb-spinner" id="lb-spinner"><div class="lb-spin-ring"></div></div>
+        <img id="lightboxImage" src="" alt="">
+      </div>
+      <button class="lb-arrow lb-next" onclick="event.stopPropagation(); navigateGallery(1)" aria-label="Next">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+    </div>
+
+    <!-- Thumbnail filmstrip -->
+    <div class="lb-filmstrip" id="lb-filmstrip" onclick="event.stopPropagation()"></div>
   </div>
 
   <!-- Jerseys Modal -->
@@ -378,8 +528,12 @@
           </tr>
           <tr>
             <td>فيصل</td>
-          <td><span class="status due">!</span></td>
-        </tr>
+            <td><span class="status done">✓</span></td>
+          </tr>
+            <tr>
+              <td>جمعه</td>
+              <td><span class="status done">✓</span></td>
+            </tr>
             <tr>
               <td>وادفور</td>
               <td><span class="status unmarked">-</span></td>
@@ -447,198 +601,234 @@
   </div>
 
   <script>
-    // Menu Functions
+    // ── Menu ──────────────────────────────────────────────────────
     function toggleMenu() {
       const menu = document.getElementById('menuOverlay');
-      const computedStyle = window.getComputedStyle(menu);
-      if (computedStyle.display === 'none') {
-        menu.style.display = 'flex';
-      } else {
-        menu.style.display = 'none';
+      menu.style.display = window.getComputedStyle(menu).display === 'none' ? 'flex' : 'none';
+    }
+    function closeMenu() { document.getElementById('menuOverlay').style.display = 'none'; }
+
+    // ── Simple Modals ─────────────────────────────────────────────
+    function openAnnouncements() { closeMenu(); document.getElementById('announcementsModal').style.display = 'block'; lockScroll(); }
+    function closeAnnouncements() { document.getElementById('announcementsModal').style.display = 'none'; unlockScroll(); }
+    function openGroupRules() { closeMenu(); document.getElementById('groupRulesModal').style.display = 'block'; lockScroll(); }
+    function closeGroupRules() { document.getElementById('groupRulesModal').style.display = 'none'; unlockScroll(); }
+    function openJerseysModal() { closeMenu(); document.getElementById('jerseysModal').style.display = 'block'; lockScroll(); }
+    function closeJerseysModal() { document.getElementById('jerseysModal').style.display = 'none'; unlockScroll(); }
+
+
+    // ── Body scroll lock ──────────────────────────────────────────
+    function lockScroll()   { document.body.classList.add('body-locked'); }
+    function unlockScroll() { document.body.classList.remove('body-locked'); }
+
+    // ── Gallery Modal ─────────────────────────────────────────────
+    function openGallery() {
+      closeMenu();
+      document.getElementById('galleryModal').style.display = 'flex';
+      lockScroll();
+    }
+    function closeGallery() {
+      document.getElementById('galleryModal').style.display = 'none';
+      unlockScroll();
+    }
+
+    // ── Lightbox ──────────────────────────────────────────────────
+    const galleryImages = [
+      'Gallery/1.jpg',   'Gallery/2.jpg',  'Gallery/3.jpg',  'Gallery/4.jpg',
+      'Gallery/5.jpg',   'Gallery/6.jpg',  'Gallery/7.jpg',  'Gallery/8.jpg',
+      'Gallery/9.jpg',   'Gallery/10.jpg', 'Gallery/11.jpg', 'Gallery/12.jpg',
+      'Gallery/14.jpg',  'Gallery/15.jpg', 'Gallery/16.jpg',
+      'Gallery/17.jpeg', 'Gallery/18.jpeg'
+    ];
+
+    let currentImageIndex = 0;
+    let isAnimating = false;
+    let isZoomed = false;
+    let touchStartX = 0, touchStartY = 0;
+
+    const lightboxEl   = document.getElementById('imageLightbox');
+    const lightboxImg  = document.getElementById('lightboxImage');
+    const lbStage      = document.getElementById('lb-stage');
+    const lbSpinner    = document.getElementById('lb-spinner');
+    const lbFilmstrip  = document.getElementById('lb-filmstrip');
+
+    /* Build filmstrip thumbnails once */
+    function buildFilmstrip() {
+      lbFilmstrip.innerHTML = '';
+      galleryImages.forEach((src, i) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'lb-thumb';
+        thumb.dataset.index = i;
+        thumb.innerHTML = `<img src="${src}" alt="" loading="lazy">`;
+        thumb.addEventListener('click', () => {
+          const dir = i > currentImageIndex ? 1 : -1;
+          currentImageIndex = i;
+          showLightboxImage(currentImageIndex, dir);
+        });
+        lbFilmstrip.appendChild(thumb);
+      });
+    }
+
+    function updateFilmstrip() {
+      const thumbs = lbFilmstrip.querySelectorAll('.lb-thumb');
+      thumbs.forEach((t, i) => t.classList.toggle('lb-thumb-active', i === currentImageIndex));
+      /* scroll active thumb into view */
+      const active = lbFilmstrip.querySelector('.lb-thumb-active');
+      if (active) {
+        const strip = lbFilmstrip;
+        const thumbLeft  = active.offsetLeft;
+        const thumbWidth = active.offsetWidth;
+        const stripWidth = strip.offsetWidth;
+        strip.scrollLeft = thumbLeft - stripWidth / 2 + thumbWidth / 2;
       }
     }
 
-    function closeMenu() {
-      document.getElementById('menuOverlay').style.display = 'none';
+    function updateCounter() {
+      document.getElementById('lb-current').textContent = currentImageIndex + 1;
+      document.getElementById('lb-total').textContent   = galleryImages.length;
     }
 
-    // Announcements Modal
-    function openAnnouncements() {
-      closeMenu();
-      document.getElementById('announcementsModal').style.display = 'block';
+    /* direction: 1 = forward/right, -1 = backward/left, 0 = no slide */
+    function showLightboxImage(index, direction) {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      /* reset zoom */
+      if (isZoomed) { isZoomed = false; lbStage.classList.remove('zoomed'); }
+
+      const outX = direction > 0 ? '-36px' : direction < 0 ? '36px' : '0';
+      const inX  = direction > 0 ?  '36px' : direction < 0 ? '-36px' : '0';
+
+      /* animate current image OUT */
+      lightboxImg.style.transition = 'opacity 0.17s ease, transform 0.17s ease';
+      lightboxImg.style.opacity    = '0';
+      lightboxImg.style.transform  = `translateX(${outX}) scale(0.97)`;
+
+      /* show spinner */
+      lbSpinner.classList.add('active');
+
+      setTimeout(() => {
+        const src = galleryImages[index];
+        lightboxImg.src = '';
+        lightboxImg.style.transform = `translateX(${inX}) scale(0.97)`;
+
+        const loader = new Image();
+        loader.onload = () => {
+          lightboxImg.src = src;
+          lbSpinner.classList.remove('active');
+          requestAnimationFrame(() => {
+            lightboxImg.style.transition = 'opacity 0.28s ease, transform 0.28s ease';
+            lightboxImg.style.opacity    = '1';
+            lightboxImg.style.transform  = 'translateX(0) scale(1)';
+            isAnimating = false;
+          });
+          updateCounter();
+          updateFilmstrip();
+        };
+        loader.onerror = () => { lbSpinner.classList.remove('active'); isAnimating = false; };
+        loader.src = src;
+      }, 175);
     }
 
-    function closeAnnouncements() {
-      document.getElementById('announcementsModal').style.display = 'none';
+    let swipeHintShown = false;
+
+    function showSwipeHint() {
+      if (swipeHintShown) return;
+      swipeHintShown = true;
+      // Only show on touch devices
+      if (!window.matchMedia('(hover: none)').matches) return;
+      const hint = document.createElement('div');
+      hint.className = 'lb-swipe-hint';
+      hint.innerHTML = '<i class="fas fa-arrows-left-right"></i><span>اسحب للتنقل</span>';
+      lbStage.appendChild(hint);
+      setTimeout(() => hint.remove(), 2600);
     }
 
-    // Group Rules Modal
-    function openGroupRules() {
-      closeMenu();
-      document.getElementById('groupRulesModal').style.display = 'block';
-    }
-
-    function closeGroupRules() {
-      document.getElementById('groupRulesModal').style.display = 'none';
-    }
-
-    // Gallery Modal
-    function openGallery() {
-      closeMenu();
-      document.getElementById('galleryModal').style.display = 'block';
-    }
-
-    function closeGallery() {
-      document.getElementById('galleryModal').style.display = 'none';
-    }
-
-    // Gallery images array
-    const galleryImages = [
-      'Gallery/1.jpg', 'Gallery/2.jpg', 'Gallery/3.jpg', 'Gallery/4.jpg',
-      'Gallery/5.jpg', 'Gallery/6.jpg', 'Gallery/7.jpg', 'Gallery/8.jpg',
-      'Gallery/9.jpg', 'Gallery/10.jpg', 'Gallery/11.jpg', 'Gallery/12.jpg',
-      'Gallery/14.jpg', 'Gallery/15.jpg', 'Gallery/16.jpg'
-    ];
-    
-    let currentImageIndex = 0;
-    const lightbox = document.getElementById('imageLightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-
-    function showLightboxImage(index) {
-      const nextSrc = galleryImages[index];
-      lightboxImage.style.opacity = '0';
-      lightboxImage.src = '';
-      
-      const loader = new Image();
-      loader.onload = () => {
-        lightboxImage.src = nextSrc;
-        lightboxImage.style.opacity = '1';
-        updateImageCounter();
-      };
-      loader.src = nextSrc;
-    }
-
-    // Image Lightbox
     function openImageLightbox(imageSrc) {
       currentImageIndex = galleryImages.indexOf(imageSrc);
       if (currentImageIndex === -1) currentImageIndex = 0;
 
-      showLightboxImage(currentImageIndex);
-      lightbox.style.display = 'flex';
-      
-      // Add keyboard listener
+      buildFilmstrip();
+      lightboxEl.style.display = 'flex';
+      lockScroll();
+      showLightboxImage(currentImageIndex, 0);
+      showSwipeHint();
+
       document.addEventListener('keydown', handleKeyboardNavigation);
-      
-      // Setup swipe support
-      setTimeout(setupSwipeSupport, 100);
+      /* Attach swipe to the whole stage, not just the image */
+      lbStage.addEventListener('touchstart', onTouchStart, { passive: true });
+      lbStage.addEventListener('touchend',   onTouchEnd,   { passive: true });
     }
 
     function closeImageLightbox() {
-      document.getElementById('imageLightbox').style.display = 'none';
+      lightboxEl.style.display = 'none';
+      isZoomed = false;
+      lbStage.classList.remove('zoomed');
+      unlockScroll();
       document.removeEventListener('keydown', handleKeyboardNavigation);
+      lbStage.removeEventListener('touchstart', onTouchStart);
+      lbStage.removeEventListener('touchend',   onTouchEnd);
     }
 
     function navigateGallery(direction) {
-      currentImageIndex += direction;
-      
-      if (currentImageIndex < 0) {
-        currentImageIndex = galleryImages.length - 1;
-      } else if (currentImageIndex >= galleryImages.length) {
-        currentImageIndex = 0;
-      }
-
-      showLightboxImage(currentImageIndex);
+      currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+      showLightboxImage(currentImageIndex, direction);
     }
 
-    function updateImageCounter() {
-      document.getElementById('currentImageIndex').textContent = currentImageIndex + 1;
-      document.getElementById('totalImages').textContent = galleryImages.length;
+    function toggleZoom(e) {
+      if (isAnimating) return;
+      isZoomed = !isZoomed;
+      lbStage.classList.toggle('zoomed', isZoomed);
     }
 
     function handleKeyboardNavigation(e) {
-      if (e.key === 'ArrowLeft') {
-        navigateGallery(-1);
-      } else if (e.key === 'ArrowRight') {
-        navigateGallery(1);
-      } else if (e.key === 'Escape') {
-        closeImageLightbox();
+      if (e.key === 'ArrowLeft')  navigateGallery(-1);
+      else if (e.key === 'ArrowRight') navigateGallery(1);
+      else if (e.key === 'Escape') closeImageLightbox();
+      else if (e.key === 'z' || e.key === 'Z') toggleZoom();
+    }
+
+    /* Touch / swipe */
+    function onTouchStart(e) {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }
+    function onTouchEnd(e) {
+      const dx = touchStartX - e.changedTouches[0].screenX;
+      const dy = touchStartY - e.changedTouches[0].screenY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 48) {
+        navigateGallery(dx > 0 ? 1 : -1);
       }
     }
 
-    // Swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    let touchStartY = 0;
-    let touchEndY = 0;
+    // ── Close modals on backdrop click ────────────────────────────
+    window.onclick = function(e) {
+      if (e.target === document.getElementById('jerseysModal'))       { document.getElementById('jerseysModal').style.display = 'none'; unlockScroll(); }
+      if (e.target === document.getElementById('announcementsModal')) { document.getElementById('announcementsModal').style.display = 'none'; unlockScroll(); }
+      if (e.target === document.getElementById('groupRulesModal'))    { document.getElementById('groupRulesModal').style.display = 'none'; unlockScroll(); }
 
-    // Add touch listeners when lightbox opens
-    function setupSwipeSupport() {
-      if (!lightboxImage) return;
-      
-      lightboxImage.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
-      }, { passive: true });
+    };
 
-      lightboxImage.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-      }, { passive: true });
+    // ── Sync lineup pitch from roster cards ───────────────────────
+    function syncLineup() {
+      const yellowCards = document.querySelectorAll('.yellow-team .tv-player-card');
+      const redCards    = document.querySelectorAll('.red-team .tv-player-card');
+      const yellowDots  = document.querySelectorAll('.pp.yp');
+      const redDots     = document.querySelectorAll('.pp.rp');
+
+      yellowCards.forEach((card, i) => {
+        if (!yellowDots[i]) return;
+        yellowDots[i].querySelector('.pp-dot').textContent  = card.querySelector('.player-number').textContent.trim();
+        yellowDots[i].querySelector('.pp-name').textContent = card.querySelector('.player-name').textContent.trim();
+      });
+      redCards.forEach((card, i) => {
+        if (!redDots[i]) return;
+        redDots[i].querySelector('.pp-dot').textContent  = card.querySelector('.player-number').textContent.trim();
+        redDots[i].querySelector('.pp-name').textContent = card.querySelector('.player-name').textContent.trim();
+      });
     }
 
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      const diffX = touchStartX - touchEndX;
-      const diffY = touchStartY - touchEndY;
-      
-      // Only trigger if horizontal swipe is greater than vertical swipe
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
-        if (diffX > 0) {
-          // Swipe left - next image
-          navigateGallery(1);
-        } else {
-          // Swipe right - previous image
-          navigateGallery(-1);
-        }
-      }
-    }
-
-    // Jerseys Modal
-    function openJerseysModal() {
-      closeMenu();
-      document.getElementById('jerseysModal').style.display = 'block';
-    }
-
-    function closeJerseysModal() {
-      document.getElementById('jerseysModal').style.display = 'none';
-    }
-
-    // Close modals when clicking outside of them
-    window.onclick = function(event) {
-      const jerseysModal = document.getElementById('jerseysModal');
-      const announcementsModal = document.getElementById('announcementsModal');
-      const groupRulesModal = document.getElementById('groupRulesModal');
-      const galleryModal = document.getElementById('galleryModal');
-      
-      if (event.target == jerseysModal) {
-        jerseysModal.style.display = 'none';
-      }
-      if (event.target == announcementsModal) {
-        announcementsModal.style.display = 'none';
-      }
-      if (event.target == groupRulesModal) {
-        groupRulesModal.style.display = 'none';
-      }
-      if (event.target == galleryModal) {
-        galleryModal.style.display = 'none';
-      }
-      
-      const imageLightbox = document.getElementById('imageLightbox');
-      if (event.target == imageLightbox) {
-        imageLightbox.style.display = 'none';
-      }
-    }
+    document.addEventListener('DOMContentLoaded', syncLineup);
   </script>
 </body>
 </html>
