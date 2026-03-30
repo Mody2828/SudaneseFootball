@@ -376,34 +376,34 @@
             <!-- ── Red Team 🇸🇩 (bottom half, GK at bottom) — 1-2-3-3 ── -->
             <!-- GK -->
             <div class="pp rp" style="left:50%;top:94.5%;--p:9">
-              <div class="pp-dot">١</div><span class="pp-name">حسام</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">حسام</span>
             </div>
             <!-- DEF -->
             <div class="pp rp" style="left:30%;top:83%;--p:10">
-              <div class="pp-dot">٢</div><span class="pp-name">فيصل</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">فيصل</span>
             </div>
             <div class="pp rp" style="left:70%;top:83%;--p:11">
-              <div class="pp-dot">٣</div><span class="pp-name">محى الدين</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">محى الدين</span>
             </div>
             <!-- MID -->
             <div class="pp rp" style="left:20%;top:70%;--p:12">
-              <div class="pp-dot">٤</div><span class="pp-name">وائل</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">وائل</span>
             </div>
             <div class="pp rp" style="left:50%;top:68%;--p:13">
-              <div class="pp-dot">٥</div><span class="pp-name">سمؤال</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">سمؤال</span>
             </div>
             <div class="pp rp" style="left:80%;top:70%;--p:14">
-              <div class="pp-dot">٦</div><span class="pp-name">بطوطه</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">بطوطه</span>
             </div>
             <!-- FWD -->
             <div class="pp rp" style="left:20%;top:58%;--p:15">
-              <div class="pp-dot">٧</div><span class="pp-name">جمعه</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">جمعه</span>
             </div>
             <div class="pp rp" style="left:50%;top:56%;--p:16">
-              <div class="pp-dot">٨</div><span class="pp-name">محمد عوض</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">محمد عوض</span>
             </div>
             <div class="pp rp" style="left:80%;top:58%;--p:17">
-              <div class="pp-dot">٩</div><span class="pp-name">سندا</span>
+              <div class="pp-dot" style="padding:0;overflow:hidden;background:none"><img src="sudan-ball.png" alt="🇸🇩" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><span class="pp-name">سندا</span>
             </div>
 
           </div><!-- /football-pitch -->
@@ -842,7 +842,10 @@
       });
       redCards.forEach((card, i) => {
         if (!redDots[i]) return;
-        redDots[i].querySelector('.pp-dot').textContent  = card.querySelector('.player-number').textContent.trim();
+        const dot = redDots[i].querySelector('.pp-dot');
+        if (!dot.querySelector('img')) {
+          dot.textContent = card.querySelector('.player-number').textContent.trim();
+        }
         redDots[i].querySelector('.pp-name').textContent = card.querySelector('.player-name').textContent.trim();
       });
     }
