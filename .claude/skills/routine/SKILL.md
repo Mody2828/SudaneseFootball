@@ -50,6 +50,9 @@ Match card format:
       ...
     </div>
   </div>
+  <div class="jerseys-row">
+    <span class="jerseys-info">الفنايل <i class="fas fa-tshirt"></i> [jersey holder name from the current match's bench jerseys card]</span>
+  </div>
 </div>
 ```
 
