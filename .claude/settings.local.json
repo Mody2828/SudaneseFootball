@@ -6,7 +6,8 @@
       "Bash(git push:*)",
       "Bash(git commit:*)",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "PowerShell(\\(ls \"C:\\\\Users\\\\mrizg\\\\Desktop\\\\Football\\\\SudaneseFootball\\\\Gallery\"\\).Name -join \", \")"
     ]
   }
 }
