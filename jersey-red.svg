@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 104">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"  stop-color="#ff6d84"/>
+      <stop offset=".5" stop-color="#ec1636"/>
+      <stop offset="1"  stop-color="#b1001f"/>
+    </linearGradient>
+    <linearGradient id="sleeve" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cf0d2c"/>
+      <stop offset="1" stop-color="#8f0016"/>
+    </linearGradient>
+    <radialGradient id="gloss" cx=".4" cy=".22" r=".6">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g stroke="#4d0010" stroke-opacity=".4" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M24,21 L5,33 L15,54 L30,47 Z"  fill="url(#sleeve)"/>
+    <path d="M76,21 L95,33 L85,54 L70,47 Z" fill="url(#sleeve)"/>
+    <path d="M38,20 L24,21 L27,47 L24,100 L76,100 L73,47 L76,21 L62,20 Q50,33 38,20 Z" fill="url(#body)"/>
+  </g>
+  <path d="M50,34 L50,99" stroke="#4d0010" stroke-opacity=".2" stroke-width="1.2"/>
+  <path d="M38,20 Q50,33 62,20" fill="none" stroke="#7a0016" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M38,20 L24,21 L27,47 L24,100 L76,100 L73,47 L76,21 L62,20 Q50,33 38,20 Z" fill="url(#gloss)"/>
+</svg>

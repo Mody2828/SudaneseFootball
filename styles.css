@@ -1513,7 +1513,7 @@ body.body-locked {
 .fp-goal-area-top { top: 0; border-top: none; }
 .fp-goal-area-bot { bottom: 0; border-bottom: none; }
 
-/* ── Player dots ────────────────────────────────────────── */
+/* ── Player kits (broadcast lineup) ─────────────────────── */
 @keyframes pp-pop {
   from { opacity: 0; transform: translate(-50%, -50%) scale(0.4); }
   to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
@@ -1525,61 +1525,81 @@ body.body-locked {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
   animation: pp-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   animation-delay: calc(var(--p, 0) * 70ms + 200ms);
   cursor: default;
   z-index: 2;
 }
 
+/* The 3D kit/shirt — number sits on the chest */
 .pp-dot {
-  width: 30px; height: 30px;
-  border-radius: 50%;
+  width: 42px; height: 46px;
+  box-sizing: border-box;
+  padding-top: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 800;
   line-height: 1;
-  border: 2px solid rgba(255,255,255,0.9);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.55), 0 0 0 2px rgba(0,0,0,0.25);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,0.55));
+  transition: transform 0.18s ease, filter 0.18s ease;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.22);
 }
 .pp:hover .pp-dot {
-  transform: scale(1.18);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.7), 0 0 0 3px rgba(255,255,255,0.4);
+  transform: scale(1.14) translateY(-1px);
+  filter: drop-shadow(0 6px 7px rgba(0,0,0,0.6));
 }
 
+/* Broadcast nameplate */
 .pp-name {
-  font-size: 0.6rem;
-  font-weight: 700;
+  font-size: 0.58rem;
+  font-weight: 800;
   color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7);
+  background: linear-gradient(180deg, rgba(12,26,16,0.92), rgba(6,15,9,0.92));
+  border: 1px solid rgba(255,255,255,0.14);
+  border-top-width: 2px;
+  border-radius: 6px;
+  padding: 2px 7px;
   white-space: nowrap;
-  letter-spacing: 0.02em;
-  max-width: 52px;
+  letter-spacing: 0.01em;
+  max-width: 110px;
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.15;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
-/* Yellow team dot */
+/* Yellow kit */
 .yp .pp-dot {
-  background: linear-gradient(145deg, #ffd700, #e8a000);
-  color: #1a0a00;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.55), 0 0 10px rgba(255,184,0,0.5);
+  background-image: url("jersey-yellow.svg");
+  color: #3a2400;
 }
-.yp:hover .pp-dot {
-  box-shadow: 0 4px 18px rgba(0,0,0,0.7), 0 0 18px rgba(255,184,0,0.8);
-}
+.yp .pp-name { border-top-color: #ffcc22; }
 
-/* Red team dot */
+/* Red kit */
 .rp .pp-dot {
-  background: linear-gradient(145deg, #ff4060, #c0001a);
-  color: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.55), 0 0 10px rgba(255,45,85,0.5);
+  background-image: url("jersey-red.svg");
+  color: #ffffff;
 }
-.rp:hover .pp-dot {
-  box-shadow: 0 4px 18px rgba(0,0,0,0.7), 0 0 18px rgba(255,45,85,0.8);
+.rp .pp-name { border-top-color: #ff4462; }
+
+/* International matches: flag badge instead of a kit */
+.pp-dot:has(img) {
+  background-image: none;
+  padding-top: 0;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.55));
+}
+.pp-dot img {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.9);
 }
 
 /* ── Formation labels ───────────────────────────────────── */
@@ -1675,8 +1695,9 @@ body.body-locked {
 
 /* ── Small phone ≤ 480px ────────────────────────────────────── */
 @media (max-width: 480px) {
-  .pp-dot  { width: 26px; height: 26px; font-size: 0.6rem; }
-  .pp-name { font-size: 0.55rem; max-width: 46px; }
+  .pp-dot  { width: 36px; height: 40px; font-size: 0.64rem; padding-top: 5px; }
+  .pp-name { font-size: 0.52rem; max-width: 96px; padding: 2px 6px; }
+  .pp-dot img { width: 26px; height: 26px; }
 
   .menu-content  { width: 90%; }
   .menu-item     { padding: 0.85rem 1.1rem; }
@@ -1698,8 +1719,9 @@ body.body-locked {
 
 /* ── Very small ≤ 360px ─────────────────────────────────────── */
 @media (max-width: 360px) {
-  .pp-dot  { width: 22px; height: 22px; font-size: 0.55rem; border-width: 1.5px; }
-  .pp-name { font-size: 0.5rem; max-width: 40px; }
+  .pp-dot  { width: 30px; height: 34px; font-size: 0.56rem; padding-top: 4px; }
+  .pp-name { font-size: 0.47rem; max-width: 82px; padding: 1px 5px; }
+  .pp-dot img { width: 22px; height: 22px; }
 
   .header-content { min-height: 52px; }
   .logo           { width: 46px; height: 46px; }
