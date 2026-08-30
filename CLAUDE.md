@@ -42,7 +42,21 @@ The standard weekly update is automated by the `/routine` skill (see `.claude/sk
 
 1. **GK split** in `index.html` based on the `1 yellow|red` argument.
 2. **Archive**: prepend a new `.match-card` to `previous-matches.html` with the result. Match cards must keep the classes `.match-card`, `.red-team-column`, `.yellow-team-column`, `.player-name` — the notebook depends on them.
-3. **Jersey table**: mark the previous holder as `done` (✓), the next holder as `due` (!), and reorder the new due row to sit just below the last ✓.
-4. **Next match** in `index.html`: title, date/time, both rosters, formation badge, pitch dot positions, bench, jersey holder.
+3. **Next match** in `index.html`: title, date/time, both rosters, formation badge, pitch dot positions, bench.
+4. **Jersey holder**: the screenshot does *not* name one. `.claude/skills/routine/jersey_candidates.py` ranks the lineup and the skill asks the user to pick from the top 3.
+5. **Jersey table**: mark the previous holder as `done` (✓), the chosen holder as `due` (!), and reorder the new due row to sit just below the last ✓ row.
+
+### Jersey holder selection
+
+`jersey_candidates.py` reads the next-match lineup and jerseys table from `index.html` plus
+attendance history from `previous-matches.html`. It excludes guests, the outgoing holder, and
+anyone absent from the jerseys table; ranks by recent appearances (last 6 matches, 3+ expected),
+an attendance streak, never having held it, and starter-over-bench; and falls back to already-`done`
+players only when the rotation has to restart. Run it from the repo root:
+`python .claude/skills/routine/jersey_candidates.py --guests "name1,name2"`.
+
+**Guests** are flagged with a standalone `g` next to the name in the weekly screenshot (e.g. `امجد g`).
+The flag is not stored in the repo — guests are simply kept out of the jerseys table, so a guest
+must be re-flagged in each screenshot they appear in.
 
 For things outside the routine: match reports go into `reports.html` as `<article class="report-card">`; new gallery photos must be added to **both** the masonry grid HTML and the `galleryImages` JS array in `index.html`.

@@ -1,13 +1,14 @@
-  1. Fix the GK split — separate "هقزر | [player]" based on your "1 yellow/red" instruction
+  1. Fix the GK split — separate "رزقه | [player]" based on your "1 yellow/red" instruction
   2. Move current match to previous-matches.html with the result you provide
-  3. Mark jersey holder as done (✓) in the jerseys table
-  4. Set up next match from your screenshot — rosters, pitch, bench, jersey holder (marked as due !)
+  3. Set up next match from your screenshot — rosters, pitch, bench
+     (mark guests in the screenshot with a "g" next to the name)
+  4. Work out the jersey holder — shows you 3 ranked candidates, you pick one
+  5. Mark the old holder done (✓) and the chosen one due (!) in the jerseys table
 
-do the routine 1 yellow | yellow won 9 null 
+do the routine 1 yellow | yellow won 9 null
 
 
 /routine 1 yellow | yellow won 9 null
 
 
 /routine 1 yellow | yellow won 3 null
-
