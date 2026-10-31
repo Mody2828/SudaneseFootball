@@ -1,25 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 104">
   <defs>
     <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0"  stop-color="#ffe873"/>
-      <stop offset=".5" stop-color="#ffcb2b"/>
-      <stop offset="1"  stop-color="#e08f00"/>
+      <stop offset="0"  stop-color="#ffe066"/>
+      <stop offset=".5" stop-color="#ffc107"/>
+      <stop offset="1"  stop-color="#e08e00"/>
     </linearGradient>
     <linearGradient id="sleeve" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#edac00"/>
-      <stop offset="1" stop-color="#b06e00"/>
+      <stop offset="0" stop-color="#ffcf2e"/>
+      <stop offset="1" stop-color="#c47c00"/>
     </linearGradient>
-    <radialGradient id="gloss" cx=".4" cy=".22" r=".6">
-      <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#000" stop-opacity=".22"/>
+      <stop offset=".28" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".72" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#000" stop-opacity=".22"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#fff" stop-opacity=".55"/>
+      <stop offset=".42" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <g stroke="#6e4200" stroke-opacity=".35" stroke-width="1.6" stroke-linejoin="round">
-    <path d="M24,21 L5,33 L15,54 L30,47 Z"  fill="url(#sleeve)"/>
-    <path d="M76,21 L95,33 L85,54 L70,47 Z" fill="url(#sleeve)"/>
-    <path d="M38,20 L24,21 L27,47 L24,100 L76,100 L73,47 L76,21 L62,20 Q50,33 38,20 Z" fill="url(#body)"/>
-  </g>
-  <path d="M50,34 L50,99" stroke="#6e4200" stroke-opacity=".16" stroke-width="1.2"/>
-  <path d="M38,20 Q50,33 62,20" fill="none" stroke="#9c5a00" stroke-width="3.4" stroke-linecap="round"/>
-  <path d="M38,20 L24,21 L27,47 L24,100 L76,100 L73,47 L76,21 L62,20 Q50,33 38,20 Z" fill="url(#gloss)"/>
+  <!-- soft dark halo so the kit reads against grass -->
+  <path d="M38,15 L27,17 L4,29 L13,53 L30,46 L26,101 L74,101 L70,46 L87,53 L96,29 L73,17 L62,15 Q50,29 38,15 Z"
+        fill="none" stroke="#000" stroke-opacity=".32" stroke-width="5" stroke-linejoin="round"/>
+  <!-- sleeves -->
+  <path d="M27,17 L4,29 L13,53 L30,46 Z"  fill="url(#sleeve)"/>
+  <path d="M73,17 L96,29 L87,53 L70,46 Z" fill="url(#sleeve)"/>
+  <!-- cuffs -->
+  <path d="M4,29 L13,53 L17.6,51.3 L9.4,28.2 Z"   fill="#171b33"/>
+  <path d="M96,29 L87,53 L82.4,51.3 L90.6,28.2 Z" fill="#171b33"/>
+  <!-- body -->
+  <path d="M38,15 L27,17 L30,46 L26,101 L74,101 L70,46 L73,17 L62,15 Q50,29 38,15 Z" fill="url(#body)"/>
+  <path d="M38,15 L27,17 L30,46 L26,101 L74,101 L70,46 L73,17 L62,15 Q50,29 38,15 Z" fill="url(#side)"/>
+  <!-- hem band -->
+  <path d="M26.3,97 L73.7,97 L74,101 L26,101 Z" fill="#171b33" fill-opacity=".9"/>
+  <!-- shoulder accents -->
+  <path d="M31,21 L33.6,45" stroke="#171b33" stroke-opacity=".85" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M69,21 L66.4,45" stroke="#171b33" stroke-opacity=".85" stroke-width="1.7" stroke-linecap="round"/>
+  <!-- collar -->
+  <path d="M38,15 Q50,29 62,15" fill="none" stroke="#171b33" stroke-width="4.4" stroke-linecap="round"/>
+  <!-- gloss -->
+  <path d="M38,15 L27,17 L4,29 L13,53 L30,46 L26,101 L74,101 L70,46 L87,53 L96,29 L73,17 L62,15 Q50,29 38,15 Z" fill="url(#gloss)"/>
 </svg>

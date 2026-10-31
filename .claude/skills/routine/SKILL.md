@@ -72,7 +72,7 @@ The user provides a screenshot with next match data. Extract:
 
 Update `index.html`:
 - Match title (`h1.match-title`) and details
-- Lineup header date and time
+- Lineup poster header: venue (`.lineup-venue`, e.g. `ASV` / `Striker`), date (`.lineup-date`) and time (`.lineup-time`, time only, no venue)
 - Both team roster cards (`.yellow-team .tv-lineup` and `.red-team .tv-lineup`)
 - Formation badge — use **١-٢-٣** for 6 players, **١-٢-٣-٣** for 9 players
 - Football pitch dots (`.pp.yp` and `.pp.rp`) with correct formation positions:

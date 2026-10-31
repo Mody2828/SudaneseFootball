@@ -1303,117 +1303,207 @@ body.body-locked {
 }
 
 /* ════════════════════════════════════════════════════════════
-   LINEUP PITCH SECTION
+   LINEUP — BROADCAST MATCH CARD
+   (versus plate → info strip → floodlit pitch → kits + plates)
    ════════════════════════════════════════════════════════════ */
 
 .lineup-section {
-  margin: 0 0 2rem;
+  margin: 0 auto 2rem;
+  max-width: 640px;
 }
 
-/* ── Header ─────────────────────────────────────────────── */
-.lineup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-.lineup-header-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.lineup-icon {
-  font-size: 1.3rem;
-  color: var(--green);
-  filter: drop-shadow(0 0 6px var(--green-glow));
-}
-.lineup-title {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: 0.04em;
-}
-.lineup-header-right {
+/* ── Poster header: venue headline + date/time ──────────── */
+.poster-head {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 0.15rem;
-}
-.lineup-date {
-  font-size: 0.78rem;
-  color: var(--text-sub);
-}
-.lineup-time {
-  font-size: 0.78rem;
-  color: var(--green);
-  display: flex;
   align-items: center;
-  gap: 0.3rem;
-}
-
-/* ── Teams bar ──────────────────────────────────────────── */
-.lineup-teams-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--surface-1);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 0.5rem 0.9rem;
-  margin-bottom: 0.7rem;
-}
-.lineup-team-name {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-.lineup-team-name i { font-size: 0.95rem; }
-.lineup-yellow { color: var(--amber); }
-.lineup-yellow i { filter: drop-shadow(0 0 4px var(--amber-glow)); }
-.lineup-red    { color: var(--red); }
-.lineup-red    i { filter: drop-shadow(0 0 4px var(--red-glow)); }
-
-.lineup-formation-badge {
-  background: var(--surface-2);
+  text-align: center;
+  padding: 1.1rem 1rem 0.85rem;
+  background:
+    radial-gradient(60% 90% at 100% 50%, rgba(255,184,0,0.22) 0%, transparent 70%),
+    radial-gradient(60% 90% at 0% 50%,   rgba(255,45,85,0.22)  0%, transparent 70%),
+    linear-gradient(180deg, #161c33 0%, #0b0e1a 100%);
   border: 1px solid var(--border-bright);
-  border-radius: 20px;
-  padding: 0.2rem 0.7rem;
-  font-size: 0.78rem;
+  border-bottom: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.poster-head::before {              /* diagonal stadium light */
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.06) 50%, transparent 70%);
+  pointer-events: none;
+}
+.poster-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--text-sub);
+  margin-bottom: 0.15rem;
+}
+.poster-venue {
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 14vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  direction: ltr;
+  background: linear-gradient(180deg, #ffffff 0%, #c9cedd 55%, #8f97ad 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+}
+.poster-when {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.45rem;
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.poster-sep {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 10px var(--green-glow);
+}
+.lineup-date { color: #fff; white-space: nowrap; }
+.lineup-time { color: var(--green); direction: ltr; white-space: nowrap; text-shadow: 0 0 14px var(--green-glow); }
+
+/* ── Teams plate ────────────────────────────────────────── */
+.vs-plate {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  background: #0a0d18;
+  border: 1px solid var(--border-bright);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.vs-side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 0.95rem;
+  min-width: 0;
+}
+/* yellow sits on the inline-start (right) column, red on the left */
+.vs-yellow {
+  background: linear-gradient(270deg, rgba(255,184,0,0.28) 0%, rgba(255,184,0,0.05) 65%, transparent 100%);
+  box-shadow: inset -5px 0 0 var(--amber);
+}
+.vs-red {
+  flex-direction: row-reverse;
+  text-align: left;
+  background: linear-gradient(90deg, rgba(255,45,85,0.28) 0%, rgba(255,45,85,0.05) 65%, transparent 100%);
+  box-shadow: inset 5px 0 0 var(--red);
+}
+.vs-kit {
+  flex: none;
+  width: 36px; height: 39px;
+  background: center / contain no-repeat;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.55));
+}
+.vs-yellow .vs-kit { background-image: url("jersey-yellow.svg"); }
+.vs-red    .vs-kit { background-image: url("jersey-red.svg"); }
+.vs-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  min-width: 0;
+}
+.vs-team {
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1.35rem;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+.vs-yellow .vs-team { color: #ffd84a; text-shadow: 0 0 16px rgba(255,184,0,0.45); }
+.vs-red    .vs-team { color: #ff5c78; text-shadow: 0 0 16px rgba(255,45,85,0.45); }
+.vs-sub {
+  font-size: 0.66rem;
   font-weight: 700;
   color: var(--text-sub);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+}
+.vs-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.7rem;
+}
+.vs-badge {
+  width: 34px; height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #c9cedd 100%);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.08), 0 4px 14px rgba(0,0,0,0.6);
+  transform: rotate(45deg);
+}
+.vs-badge span {
+  transform: rotate(-45deg);
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 900;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: #0a0d18;
+}
+.lineup-formation-badge {
   direction: ltr;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
 }
 
 /* ── Pitch wrapper ──────────────────────────────────────── */
 .lineup-pitch-wrap {
-  border-radius: var(--radius-lg);
+  position: relative;
+  border: 1px solid var(--border-bright);
+  border-top: 0;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-md), 0 0 0 2px rgba(255,255,255,0.06);
+  box-shadow: var(--shadow-md);
 }
 
-/* ── Football Pitch ─────────────────────────────────────── */
+/* ── Floodlit pitch ─────────────────────────────────────── */
 .football-pitch {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 5;          /* taller on mobile — more room for players */
-  background:
-    /* subtle grass stripes */
-    repeating-linear-gradient(
-      180deg,
-      rgba(0,0,0,0.06) 0px,
-      rgba(0,0,0,0.06) 28px,
-      transparent      28px,
-      transparent      56px
-    ),
-    linear-gradient(160deg, #1a7a3c 0%, #1d8c44 40%, #1a7a3c 60%, #1d8c44 100%);
+  aspect-ratio: 3 / 5;
   overflow: hidden;
+  background:
+    /* team-colour glow behind each goal */
+    radial-gradient(62% 30% at 50% 0%,   rgba(255,184,0,0.34) 0%, rgba(255,184,0,0) 100%),
+    radial-gradient(62% 30% at 50% 100%, rgba(255,45,85,0.34)  0%, rgba(255,45,85,0) 100%),
+    /* floodlight sheen */
+    linear-gradient(118deg, rgba(255,255,255,0.08) 0%, transparent 38%),
+    /* vignette */
+    radial-gradient(88% 72% at 50% 50%, transparent 50%, rgba(0,0,0,0.5) 100%),
+    /* mown stripes */
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.045) 0 12.5%, transparent 12.5% 25%),
+    linear-gradient(180deg, #1f8f49 0%, #176f39 50%, #1f8f49 100%);
 }
 
-/* ── Pitch Markings ─────────────────────────────────────── */
-/* All markings use absolute positioning, white semi-transparent */
+/* ── Markings ───────────────────────────────────────────── */
 .fp-center-line,
 .fp-center-circle,
 .fp-center-dot,
@@ -1423,20 +1513,17 @@ body.body-locked {
 .fp-corner,
 .fp-goal {
   position: absolute;
-  border-color: rgba(255,255,255,0.55);
+  border-color: rgba(255,255,255,0.72);
   border-style: solid;
   box-sizing: border-box;
+  z-index: 1;
 }
-
-/* Center line */
 .fp-center-line {
   top: 50%; left: 4%;
   width: 92%; height: 0;
   border-width: 1px 0 0 0;
   transform: translateY(-50%);
 }
-
-/* Center circle */
 .fp-center-circle {
   top: 50%; left: 50%;
   width: 22%;
@@ -1445,18 +1532,14 @@ body.body-locked {
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* Center dot */
 .fp-center-dot {
   top: 50%; left: 50%;
   width: 5px; height: 5px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.85);
   border-width: 0;
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* Penalty boxes */
 .fp-pen-box {
   left: 50%;
   transform: translateX(-50%);
@@ -1466,8 +1549,6 @@ body.body-locked {
 }
 .fp-pen-top { top: 0; border-top: none; border-radius: 0 0 4px 4px; }
 .fp-pen-bot { bottom: 0; border-bottom: none; border-radius: 4px 4px 0 0; }
-
-/* Goal boxes (small boxes inside penalty boxes) */
 .fp-goal-box {
   left: 50%;
   transform: translateX(-50%);
@@ -1477,20 +1558,16 @@ body.body-locked {
 }
 .fp-goal-top { top: 0; border-top: none; border-radius: 0 0 3px 3px; }
 .fp-goal-bot { bottom: 0; border-bottom: none; border-radius: 3px 3px 0 0; }
-
-/* Penalty spots */
 .fp-penalty-spot {
   left: 50%;
   width: 4px; height: 4px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.85);
   border-width: 0;
   border-radius: 50%;
   transform: translateX(-50%);
 }
 .fp-spot-top { top: calc(14% - 5px); }
 .fp-spot-bot { bottom: calc(14% - 5px); }
-
-/* Corner arcs */
 .fp-corner {
   width: 5%; aspect-ratio: 1;
   border-width: 1px;
@@ -1500,94 +1577,119 @@ body.body-locked {
 .fp-c-tr { top: -2.5%; right: 3%; clip-path: inset(50% 50% 0 0); }
 .fp-c-bl { bottom: -2.5%; left:  3%; clip-path: inset(0 0 50% 50%); }
 .fp-c-br { bottom: -2.5%; right: 3%; clip-path: inset(0 50% 50% 0); }
-
-/* Goals (rects sticking out of the pitch — clipped) */
 .fp-goal {
   left: 50%;
   transform: translateX(-50%);
   width: 16%;
   height: 2.5%;
   border-width: 1px;
-  background: rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.1);
 }
 .fp-goal-area-top { top: 0; border-top: none; }
 .fp-goal-area-bot { bottom: 0; border-bottom: none; }
 
-/* ── Player kits (broadcast lineup) ─────────────────────── */
+/* ── Poster layer: half watermarks + club ball ──────────── */
+.fp-wm {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.6rem, 24vw, 7.5rem);
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.fp-wm-top { top: 24%; color: rgba(255,214,80,0.11); }
+.fp-wm-bot { top: 76%; color: rgba(255,70,110,0.11); }
+.fp-center-logo {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 13%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  opacity: 0.55;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.45));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Players: kit + lower-third nameplate ───────────────── */
 @keyframes pp-pop {
   from { opacity: 0; transform: translate(-50%, -50%) scale(0.4); }
   to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
-
 .pp {
   position: absolute;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  animation: pp-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  animation-delay: calc(var(--p, 0) * 70ms + 200ms);
+  gap: 3px;
+  animation: pp-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(var(--p, 0) * 65ms + 200ms);
   cursor: default;
-  z-index: 2;
+  z-index: 3;
 }
+.pp:hover { z-index: 6; }
 
-/* The 3D kit/shirt — number sits on the chest */
+/* Kit with the number on the chest */
 .pp-dot {
-  width: 42px; height: 46px;
+  width: 46px; height: 50px;
   box-sizing: border-box;
-  padding-top: 6px;
+  padding-top: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
-  font-weight: 800;
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 0.86rem;
   line-height: 1;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  filter: drop-shadow(0 3px 3px rgba(0,0,0,0.55));
+  background: center / contain no-repeat;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.5));
   transition: transform 0.18s ease, filter 0.18s ease;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.22);
 }
-.pp:hover .pp-dot {
-  transform: scale(1.14) translateY(-1px);
-  filter: drop-shadow(0 6px 7px rgba(0,0,0,0.6));
+.pp:hover .pp-dot,
+.pp:active .pp-dot {
+  transform: scale(1.14) translateY(-2px);
+  filter: drop-shadow(0 8px 8px rgba(0,0,0,0.6)) drop-shadow(0 0 10px rgba(255,255,255,0.3));
 }
+.yp .pp-dot { background-image: url("jersey-yellow.svg"); color: #2a1a00; text-shadow: 0 1px 0 rgba(255,255,255,0.35); }
+.rp .pp-dot { background-image: url("jersey-red.svg");    color: #ffffff; text-shadow: 0 1px 1px rgba(0,0,0,0.45); }
 
-/* Broadcast nameplate */
+/* Lower-third nameplate: slanted dark plate, team-colour spine, position tag */
 .pp-name {
-  font-size: 0.58rem;
+  position: relative;
+  margin-top: 2px;
+  padding: 3px 10px;
+  font-size: 0.62rem;
   font-weight: 800;
-  color: #fff;
-  background: linear-gradient(180deg, rgba(12,26,16,0.92), rgba(6,15,9,0.92));
-  border: 1px solid rgba(255,255,255,0.14);
-  border-top-width: 2px;
-  border-radius: 6px;
-  padding: 2px 7px;
-  white-space: nowrap;
-  letter-spacing: 0.01em;
-  max-width: 110px;
-  text-align: center;
   line-height: 1.15;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  letter-spacing: 0.01em;
+  color: #fff;
+  white-space: nowrap;
+  max-width: 118px;
+  overflow: visible;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
-
-/* Yellow kit */
-.yp .pp-dot {
-  background-image: url("jersey-yellow.svg");
-  color: #3a2400;
+.pp-name::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 3px;
+  background: linear-gradient(180deg, rgba(16,20,36,0.96) 0%, rgba(6,8,16,0.96) 100%);
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 3px 9px rgba(0,0,0,0.55);
+  transform: skewX(-10deg);
 }
-.yp .pp-name { border-top-color: #ffcc22; }
-
-/* Red kit */
-.rp .pp-dot {
-  background-image: url("jersey-red.svg");
-  color: #ffffff;
-}
-.rp .pp-name { border-top-color: #ff4462; }
+.yp .pp-name::before { border-inline-start: 3px solid var(--amber); }
+.rp .pp-name::before { border-inline-start: 3px solid var(--red); }
 
 /* International matches: flag badge instead of a kit */
 .pp-dot:has(img) {
@@ -1596,13 +1698,13 @@ body.body-locked {
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.55));
 }
 .pp-dot img {
-  width: 30px; height: 30px;
+  width: 32px; height: 32px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(255,255,255,0.9);
 }
 
-/* ── Formation labels ───────────────────────────────────── */
+/* ── Formation labels (legacy, kept for older markup) ───── */
 .lineup-formations {
   display: flex;
   justify-content: space-between;
@@ -1621,16 +1723,8 @@ body.body-locked {
   font-weight: 700;
   border: 1px solid;
 }
-.lf-yellow {
-  background: rgba(255,184,0,0.1);
-  border-color: rgba(255,184,0,0.3);
-  color: var(--amber);
-}
-.lf-red {
-  background: rgba(255,45,85,0.1);
-  border-color: rgba(255,45,85,0.3);
-  color: var(--red);
-}
+.lf-yellow { background: rgba(255,184,0,0.1); border-color: rgba(255,184,0,0.3); color: var(--amber); }
+.lf-red    { background: rgba(255,45,85,0.1);  border-color: rgba(255,45,85,0.3);  color: var(--red); }
 
 /* ════════════════════════════════════════════════════════════
    RESPONSIVE — Mobile-first
@@ -1695,9 +1789,20 @@ body.body-locked {
 
 /* ── Small phone ≤ 480px ────────────────────────────────────── */
 @media (max-width: 480px) {
-  .pp-dot  { width: 36px; height: 40px; font-size: 0.64rem; padding-top: 5px; }
-  .pp-name { font-size: 0.52rem; max-width: 96px; padding: 2px 6px; }
-  .pp-dot img { width: 26px; height: 26px; }
+  .pp-dot  { width: 39px; height: 43px; font-size: 0.72rem; padding-top: 6px; }
+  .pp-name { font-size: 0.54rem; max-width: 98px; padding: 2px 8px; }
+  .pp-dot img { width: 27px; height: 27px; }
+  .vs-side { gap: 0.5rem; padding: 0.6rem 0.7rem; }
+  .vs-kit  { width: 30px; height: 33px; }
+  .vs-team { font-size: 1.12rem; }
+  .vs-sub  { font-size: 0.6rem; }
+  .vs-center { padding: 0.45rem 0.45rem; gap: 0.35rem; }
+  .vs-badge  { width: 30px; height: 30px; border-radius: 6px; }
+  .vs-badge span { font-size: 0.7rem; }
+  .lineup-formation-badge { font-size: 0.64rem; letter-spacing: 0.06em; }
+  .poster-head { padding: 0.9rem 0.8rem 0.7rem; }
+  .poster-eyebrow { font-size: 0.6rem; letter-spacing: 0.22em; }
+  .poster-when { font-size: 1.1rem; gap: 0.55rem; }
 
   .menu-content  { width: 90%; }
   .menu-item     { padding: 0.85rem 1.1rem; }
@@ -1719,9 +1824,11 @@ body.body-locked {
 
 /* ── Very small ≤ 360px ─────────────────────────────────────── */
 @media (max-width: 360px) {
-  .pp-dot  { width: 30px; height: 34px; font-size: 0.56rem; padding-top: 4px; }
-  .pp-name { font-size: 0.47rem; max-width: 82px; padding: 1px 5px; }
-  .pp-dot img { width: 22px; height: 22px; }
+  .pp-dot  { width: 33px; height: 37px; font-size: 0.62rem; padding-top: 5px; }
+  .pp-name { font-size: 0.48rem; max-width: 84px; padding: 1px 6px; }
+  .pp-dot img { width: 23px; height: 23px; }
+  .vs-team { font-size: 1rem; }
+  .vs-kit  { width: 26px; height: 28px; }
 
   .header-content { min-height: 52px; }
   .logo           { width: 46px; height: 46px; }

@@ -22,7 +22,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **All content is hardcoded in HTML** — no database, no API, no templating. Updating a training session means editing `index.html` directly.
 - **RTL layout**: `<html lang="ar" dir="rtl">`. All text is Arabic. Player names, team names, dates, and announcements are in Arabic.
-- **Pitch lineup sync**: `syncLineup()` in `index.html` copies player names/numbers from the roster cards (`.tv-player-card`) to the pitch dots (`.pp`), so you only need to edit the roster cards.
+- **Pitch lineup sync**: `syncLineup()` in `index.html` copies player names/numbers from the roster cards (`.tv-player-card`) to the pitch dots (`.pp`), so you only need to edit the roster cards. It also fills the player counts in the teams plate (`#vsSubYellow` / `#vsSubRed`).
+- **Lineup card (match poster)**: above the pitch sits a `.poster-head` with the venue headline (`.lineup-venue`, e.g. `ASV` / `Striker`), `.lineup-date` and `.lineup-time` (time only), then a `.vs-plate` (team names, kit icons, VS diamond, `.lineup-formation-badge`). The pitch itself carries half watermarks (`.fp-wm-top` / `.fp-wm-bot`) and the club ball at the centre circle. Kits are `jersey-yellow.svg` / `jersey-red.svg`, reused in both the plate and the pitch dots.
 - **Formation**: Teams play 6v6 indoor (1-2-3) or 9v9 (1-2-3-3). Pitch positions are set via inline `style` attributes (percentage-based `left`/`top`). The formation badge uses Arabic-Indic digits: **١-٢-٣** or **١-٢-٣-٣**. Yellow occupies the top half; red mirrors at `top% = 100% - yellow_top%`. Canonical coordinates:
   - **6 (1-2-3):** GK 50%/5.5% · DEF 30% & 70% / 22% · FWD 20% & 50% & 80% / 39–41%
   - **9 (1-2-3-3):** GK 50%/5.5% · DEF 30% & 70% / 17% · MID 20% & 50% & 80% / 30–32% · FWD 20% & 50% & 80% / 42–44%
