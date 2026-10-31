@@ -1133,6 +1133,17 @@ body.body-locked {
 }
 .bench-header i { color: var(--blue); font-size: 1.1rem; }
 .jerseys-card .bench-header i { color: var(--green); }
+.jerseys-header { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.jerseys-holder {
+  margin-inline-start: auto;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green);
+  background: var(--green-dim);
+  border: 1px solid rgba(0,232,122,0.35);
+  border-radius: 20px;
+  padding: 0.2rem 0.9rem;
+}
 .bench-header h3 { font-size: 1.25rem; font-weight: 700; color: var(--text); }
 
 .bench-players { display: flex; gap: 0.6rem; flex-wrap: wrap; }
@@ -1454,19 +1465,6 @@ body.body-locked {
   letter-spacing: 0.04em;
   color: #0a0d18;
 }
-.lineup-formation-badge {
-  direction: ltr;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #fff;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 4px;
-  padding: 0.1rem 0.5rem;
-  white-space: nowrap;
-}
-
 /* ── Pitch wrapper ──────────────────────────────────────── */
 .lineup-pitch-wrap {
   position: relative;
@@ -1581,23 +1579,7 @@ body.body-locked {
 .fp-goal-area-top { top: 0; border-top: none; }
 .fp-goal-area-bot { bottom: 0; border-bottom: none; }
 
-/* ── Poster layer: half watermarks + club ball ──────────── */
-.fp-wm {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Tajawal', 'Cairo', sans-serif;
-  font-weight: 900;
-  font-size: clamp(3.6rem, 24vw, 7.5rem);
-  line-height: 1;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-}
-.fp-wm-top { top: 24%; color: rgba(255,214,80,0.11); }
-.fp-wm-bot { top: 76%; color: rgba(255,70,110,0.11); }
+/* ── Poster layer: club ball ────────────────────────────── */
 .fp-center-logo {
   position: absolute;
   top: 50%; left: 50%;
@@ -1797,7 +1779,6 @@ body.body-locked {
   .vs-center { padding: 0.45rem 0.45rem; gap: 0.35rem; }
   .vs-badge  { width: 30px; height: 30px; border-radius: 6px; }
   .vs-badge span { font-size: 0.7rem; }
-  .lineup-formation-badge { font-size: 0.64rem; letter-spacing: 0.06em; }
   .poster-head { padding: 0.45rem 0.7rem 0.3rem; }
   .poster-venue { font-size: clamp(1.9rem, 10vw, 2.6rem); }
   .poster-when { font-size: 0.98rem; gap: 0.5rem; margin-top: 0.2rem; }

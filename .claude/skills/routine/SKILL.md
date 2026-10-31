@@ -74,7 +74,7 @@ Update `index.html`:
 - Match title (`h1.match-title`) and details
 - Lineup poster header: venue (`.lineup-venue`, e.g. `ASV` / `Striker`), date (`.lineup-date`) and time (`.lineup-time`, time only, no venue)
 - Both team roster cards (`.yellow-team .tv-lineup` and `.red-team .tv-lineup`)
-- Formation badge — use **١-٢-٣** for 6 players, **١-٢-٣-٣** for 9 players
+- Formation badges on the two team cards (`.tv-formation`) — use **١-٢-٣** for 6 players, **١-٢-٣-٣** for 9 players (the poster plate has no formation badge)
 - Football pitch dots (`.pp.yp` and `.pp.rp`) with correct formation positions:
   - **6 players (1-2-3):** GK at 50%/5.5%, DEF at 30%+70%/22%, FWD at 20%+50%+80%/39-41%
   - **9 players (1-2-3-3):** GK at 50%/5.5%, DEF at 30%+70%/17%, MID at 20%+50%+80%/30-32%, FWD at 20%+50%+80%/42-44%
