@@ -72,7 +72,9 @@ The user provides a screenshot with next match data. Extract:
 
 Update `index.html`:
 - Match title (`h1.match-title`) and details
-- Lineup poster header: venue (`.lineup-venue`, e.g. `ASV` / `Striker`), date (`.lineup-date`) and time (`.lineup-time`, time only, no venue)
+- Lineup poster header: venue (`.lineup-venue`), date (`.lineup-date`) and time (`.lineup-time`, time only, no venue).
+  - **ASV** → plain text: `<h2 class="poster-venue lineup-venue">ASV</h2>`
+  - **Strikers** → the club logo: `<h2 class="poster-venue lineup-venue"><img class="venue-logo" src="strikers-logo.png" alt="Strikers"></h2>`
 - Both team roster cards (`.yellow-team .tv-lineup` and `.red-team .tv-lineup`)
 - Formation badges on the two team cards (`.tv-formation`) — use **١-٢-٣** for 6 players, **١-٢-٣-٣** for 9 players (the poster plate has no formation badge)
 - Football pitch dots (`.pp.yp` and `.pp.rp`) with correct formation positions:
